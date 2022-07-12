@@ -302,7 +302,8 @@ ol {
 }
 
 .header__logo {
-	padding: 42px 0;
+  width: 200px;
+  padding: 26px 0;
 }
 
 .header__logo a {
