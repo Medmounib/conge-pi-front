@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { EventCardComponent } from './event-card/event-card.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { BreadCrumbComponent } from './bread-crumb/bread-crumb.component';
+import { EventDetailComponent } from './event-detail/event-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BreadCrumbComponent } from './bread-crumb/bread-crumb.component';
     FooterComponent,
     EventCardComponent,
     EventListComponent,
-    BreadCrumbComponent
+    BreadCrumbComponent,
+    EventDetailComponent
   ],
   imports: [
     BrowserModule,
