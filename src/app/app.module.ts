@@ -9,6 +9,7 @@ import { EventCardComponent } from './event-card/event-card.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { BreadCrumbComponent } from './bread-crumb/bread-crumb.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { EventDetailComponent } from './event-detail/event-detail.component';
     EventCardComponent,
     EventListComponent,
     BreadCrumbComponent,
+    ProductListComponent,
     EventDetailComponent
   ],
   imports: [
