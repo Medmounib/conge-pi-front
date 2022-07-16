@@ -1,3 +1,30 @@
-<div class="container-fluid">
-
+<div #map style="width:100%;height:400px;border: 1px solid black;"></div>
+<div class="container">
+  <h1>ESPACES</h1>
+  <section class="blog spad">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12" *ngFor="let espace of espaceList, let i= index" >
+          <div class="blog__item">
+            <div class="blog__item__pic">
+              <img src="{{ espace.image }}" alt="">
+            </div>
+            <div class="blog__item__text">
+              <h2><a href="#">{{ espace.title }}</a></h2>
+              <h5><a href="#">{{ espace.description }}</a></h5>
+              <ul>
+                <li>{{ espace.heure_debut }}h - {{ espace.heure_fin }}h </li>
+                <li>de {{ espace.jour_debut }} à {{ espace.jour_fin }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 text-center">
+          <div class="load__more">
+            <a href="#" class="primary-btn">Voir plus</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
