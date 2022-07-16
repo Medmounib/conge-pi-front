@@ -11,6 +11,7 @@ import { EventListComponent } from './event-list/event-list.component';
 import { BreadCrumbComponent } from './bread-crumb/bread-crumb.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { EspaceListComponent } from './espace-list/espace-list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ProductListComponent } from './product-list/product-list.component';
     EventListComponent,
     BreadCrumbComponent,
     ProductListComponent,
-    EventDetailComponent
+    EventDetailComponent,
+    EspaceListComponent
   ],
   imports: [
     BrowserModule,
