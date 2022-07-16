@@ -1,4 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Event} from '../model/event';
+import {EventService} from "../services/event.service";
 
 @Component({
   selector: 'app-event-list',
@@ -8,9 +10,17 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class EventListComponent implements OnInit {
 
   breadCrumbTitle: string = "Event";
-  constructor() { }
+  eventList: Event[];
+
+
+  constructor(private eventService: EventService) {
+  }
 
   ngOnInit(): void {
+    this.eventService.getList().subscribe(
+      (data: Event[]) => this.eventList = data
+    );
+
   }
 
 }

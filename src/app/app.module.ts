@@ -3,12 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {HttpClientModule} from "@angular/common/http";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { EventCardComponent } from './event-card/event-card.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { BreadCrumbComponent } from './bread-crumb/bread-crumb.component';
+import { EventDetailComponent } from './event-detail/event-detail.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { EspaceListComponent } from './espace-list/espace-list.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { ProductListComponent } from './product-list/product-list.component';
     EventCardComponent,
     EventListComponent,
     BreadCrumbComponent,
-    ProductListComponent
+    ProductListComponent,
+    EventDetailComponent,
+    EspaceListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
