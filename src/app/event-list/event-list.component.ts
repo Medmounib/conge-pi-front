@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import { Event } from '../model/event';
+import {Event} from '../model/event';
+import {EventService} from "../services/event.service";
 
 @Component({
   selector: 'app-event-list',
@@ -12,17 +13,14 @@ export class EventListComponent implements OnInit {
   eventList: Event[];
 
 
-  constructor() { }
+  constructor(private eventService: EventService) {
+  }
 
   ngOnInit(): void {
-    this.eventList = [
-      {
-        id:2,
-        name: "new event",
-        description: "desc here",
-        image: "img"
-      }
-    ];
+    this.eventService.getList().subscribe(
+      (data: Event[]) => this.eventList = data
+    );
+
   }
 
 }

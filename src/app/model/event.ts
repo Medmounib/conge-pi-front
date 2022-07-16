@@ -1,6 +1,12 @@
-export class Event{
-    id:number;
-    name: string;
-    description: string;
-    image: string;
-  }
+export class Event {
+  id: number;
+  title: string;
+  type: string;
+  description: string;
+  maxPlacesNumber: number;
+  createdAt: Date;
+  updatedAt: Date;
+  dateStart: Date;
+  dateEnd: Date;
+  image: string;
+}
