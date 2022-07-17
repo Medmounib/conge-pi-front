@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Event} from '../model/event';
-import {EventService} from "../services/event.service";
+import {Event} from '../../shared/model/event';
+import {EventService} from "../../shared/services/event.service";
 
 @Component({
   selector: 'app-event-list',

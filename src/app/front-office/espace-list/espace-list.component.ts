@@ -1,8 +1,8 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
-import {Espace} from "../model/espace";
-import {CategoriesEspace} from "../model/categoriesEspace";
-import {EspaceService} from "../services/espace.service";
-import {categoriesEspaceService} from "../services/categoriesEspace.service";
+import {Espace} from "../../shared/model/espace";
+import {CategoriesEspace} from "../../shared/model/categoriesEspace";
+import {EspaceService} from "../../shared/services/espace.service";
+import {categoriesEspaceService} from "../../shared/services/categoriesEspace.service";
 import {} from 'googlemaps';
 import { ViewChild } from '@angular/core';
 
