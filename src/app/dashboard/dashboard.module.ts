@@ -5,12 +5,14 @@ import {DashboardHeaderComponent} from './dashboard-header/dashboard-header.comp
 import {DashboardAppComponent} from './dashboard-app/dashboard-app.component';
 import {SharedModule} from "../shared/shared.module";
 import {CommonModule} from "@angular/common";
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 @NgModule({
   declarations: [
     DashboardHeaderComponent,
-    DashboardAppComponent
+    DashboardAppComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,
