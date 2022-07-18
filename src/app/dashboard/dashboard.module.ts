@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
 
-import { DashboardRoutingModule } from './dashboard-routing.module';
-import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.component';
-import { DashboardAppComponent } from './dashboard-app/dashboard-app.component';
+import {DashboardRoutingModule} from './dashboard-routing.module';
+import {DashboardHeaderComponent} from './dashboard-header/dashboard-header.component';
+import {DashboardAppComponent} from './dashboard-app/dashboard-app.component';
+import {SharedModule} from "../shared/shared.module";
+import {CommonModule} from "@angular/common";
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { DashboardAppComponent } from './dashboard-app/dashboard-app.component';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     DashboardRoutingModule
   ]
 })

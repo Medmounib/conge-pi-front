@@ -1,7 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
 
-import { FrontOfficeRoutingModule } from './front-office-routing.module';
+import {FrontOfficeRoutingModule} from './front-office-routing.module';
 import {HeaderComponent} from "./header/header.component";
 import {FooterComponent} from "./footer/footer.component";
 import {EventCardComponent} from "./event-card/event-card.component";
@@ -10,9 +9,9 @@ import {BreadCrumbComponent} from "./bread-crumb/bread-crumb.component";
 import {ProductListComponent} from "./product-list/product-list.component";
 import {EventDetailComponent} from "./event-detail/event-detail.component";
 import {EspaceListComponent} from "./espace-list/espace-list.component";
-import {HttpClientModule} from "@angular/common/http";
 import {SharedModule} from "../shared/shared.module";
-import { FrontAppComponent } from './front-app/front-app.component';
+import {FrontAppComponent} from './front-app/front-app.component';
+import {CommonModule} from "@angular/common";
 
 
 @NgModule({
@@ -29,7 +28,6 @@ import { FrontAppComponent } from './front-app/front-app.component';
   ],
   imports: [
     CommonModule,
-    HttpClientModule,
     SharedModule,
     FrontOfficeRoutingModule
   ]
