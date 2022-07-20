@@ -6,6 +6,7 @@ export class Event {
   maxPlacesNumber: number;
   createdAt: Date;
   updatedAt: Date;
+  price: number;
   dateStart: Date;
   dateEnd: Date;
   image: string;
