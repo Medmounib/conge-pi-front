@@ -7,6 +7,8 @@ import {SharedModule} from "../shared/shared.module";
 import {CommonModule} from "@angular/common";
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { EventListComponent } from './event-list/event-list.component';
+import { EventFormComponent } from './event-form/event-form.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -14,12 +16,14 @@ import { EventListComponent } from './event-list/event-list.component';
     DashboardHeaderComponent,
     DashboardAppComponent,
     SidebarComponent,
-    EventListComponent
+    EventListComponent,
+    EventFormComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    FormsModule
   ]
 })
 export class DashboardModule { }
