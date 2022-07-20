@@ -7,6 +7,8 @@ import {SharedModule} from "../shared/shared.module";
 import {CommonModule} from "@angular/common";
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { EventListComponent } from './event-list/event-list.component';
+import { EspaceListComponent } from './espace-list/espace-list.component';
+import { AddEspaceComponent } from './add-espace/add-espace.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { EventListComponent } from './event-list/event-list.component';
     DashboardHeaderComponent,
     DashboardAppComponent,
     SidebarComponent,
-    EventListComponent
+    EventListComponent,
+    EspaceListComponent,
+    AddEspaceComponent
   ],
   imports: [
     CommonModule,
