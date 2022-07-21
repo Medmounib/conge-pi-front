@@ -9,69 +9,70 @@
       <div class="col-md-12 col-sm-12">
         <div class="x_panel">
           <div class="x_content">
-            <form [formGroup]="editEvent">
-  
+            <form [formGroup]="editEvent" (ngSubmit)="collection()">
+
               <span class="section">Informations de l'événement</span>
-  
+
               <div class="field item form-group">
                 <label class="col-form-label col-md-3 col-sm-3  label-align">
                   Titre
                   <span class="required">*</span></label>
                 <div class="col-md-6 col-sm-6">
-                  <input class="form-control" name="title"
+                  <input class="form-control" name="title" formControlName="title"
                          placeholder="ex. Formation Esthétique" required="required">
                 </div>
               </div>
-  
+
               <div class="field item form-group">
                 <label class="col-form-label col-md-3 col-sm-3  label-align">Type<span class="required">*</span></label>
                 <div class="col-md-6 col-sm-6">
-                  <select name="type" class="form-control" required>
+                  <select name="type" class="form-control" formControlName="type" required>
                     <option>Séletionner un type</option>
-                    <option>Option one</option>
-                    <option>Option two</option>
-                    <option>Option three</option>
-                    <option>Option four</option>
+                    <option>Rondonné</option>
+                    <option>Formation</option>
+                    <option>Détente</option>
+                    <option>Camping</option>
+                    <option>Sortie</option>
                   </select>
                 </div>
               </div>
-  
+
               <div class="field item form-group">
                 <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre des participants max<span class="required">*</span></label>
                 <div class="col-md-6 col-sm-6">
-                  <input class="form-control" type="number" name="maxPlacesNumber" required="required"></div>
+                  <input class="form-control" type="number" formControlName="maxPlacesNumber" name="maxPlacesNumber" required="required"></div>
               </div>
-  
+
               <div class="field item form-group">
                 <label class="col-form-label col-md-3 col-sm-3  label-align">
                   Date début
                   <span class="required">*</span>
                 </label>
                 <div class="col-md-4 col-sm-4">
-                  <input class="form-control" type="date" name="startDate" required="required">
+                  <input class="form-control" type="date" name="startDate" formControlName="startDate" required="required">
                 </div>
                 <div class="col-md-2 col-sm-2">
-                  <input class="form-control" type="time" name="timeStart" required="required">
+                  <input class="form-control" type="time" name="timeStart" formControlName="timeStart" required="required">
                 </div>
               </div>
-  
+
               <div class="field item form-group">
                 <label class="col-form-label col-md-3 col-sm-3  label-align">
                   Date fin
                   <span class="required">*</span>
                 </label>
                 <div class="col-md-4 col-sm-4">
-                  <input class="form-control" type="date" name="endDate" required="required">
+                  <input class="form-control" type="date" name="endDate" formControlName="endDate" required="required">
                 </div>
                 <div class="col-md-2 col-sm-2">
-                  <input class="form-control" type="time" name="timeEnd" required="required">
+                  <input class="form-control" type="time" name="timeEnd" formControlName="timeEnd" required="required">
                 </div>
               </div>
-  
+
               <div class="field item form-group">
                 <label class="col-form-label col-md-3 col-sm-3  label-align">Description<span class="required">*</span></label>
                 <div class="col-md-6 col-sm-6">
-                  <textarea required="required" class="form-control" style="min-width: 100%" name="description"></textarea>
+                  <textarea required="required" class="form-control" style="min-width: 100% " formControlName="description" name="description"></textarea>
                 </div>
               </div>
               <div class="ln_solid">
@@ -90,4 +91,4 @@
       </div>
     </div>
   </div>
-  
+
