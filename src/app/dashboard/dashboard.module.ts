@@ -8,7 +8,8 @@ import {CommonModule} from "@angular/common";
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { EventFormComponent } from './event-form/event-form.component';
-import {FormsModule} from "@angular/forms";
+import {FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { EditEventComponent } from './edit-event/edit-event.component';
 
 
 @NgModule({
@@ -17,13 +18,15 @@ import {FormsModule} from "@angular/forms";
     DashboardAppComponent,
     SidebarComponent,
     EventListComponent,
-    EventFormComponent
+    EventFormComponent,
+    EditEventComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     DashboardRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class DashboardModule { }

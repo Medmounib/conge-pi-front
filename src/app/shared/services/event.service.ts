@@ -16,6 +16,10 @@ export class EventService {
     return this.http.get<Event[]>(this.url+"/all")
   }
 
+  getEventById(id: number){
+    return this.http.get<Event>(this.url+id)
+  }
+
   //add an event
   addEvent(event:Event){
     return this.http.post(this.url+"/add", event)
@@ -28,6 +32,6 @@ export class EventService {
 
   //update an event
   updateEvent(event: Event){
-    return this.http.post(this.url+"/update/"+event.id, event)
+    return this.http.post(this.url+"/update/"+event._id, event)
   }
 }

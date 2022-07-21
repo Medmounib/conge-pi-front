@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {Event} from "../../shared/model/event";
 import {EventService} from "../../shared/services/event.service";
 
@@ -15,20 +16,18 @@ export class EventFormComponent implements OnInit {
   timeStart: string;
   timeEnd: string;
 
-  constructor(private eventService: EventService) { }
+  constructor(private eventService: EventService, private router: Router) { }
 
   ngOnInit(): void {
     this.event = new Event();
   }
 
   save() {
-    // this.event.dateStart = new Date();
-    console.log(this.startDate)
-    console.log(this.endDate)
-    console.log(this.timeEnd)
-    console.log(this.timeStart)
-    console.log(this.event)
-    //this.eventService.addEvent(this.event).subscribe();
+    // concat and set event dates
+    this.event.dateStart = new Date(this.startDate+" " + this.timeStart);
+    this.event.dateEnd = new Date(this.endDate+" " + this.timeEnd);
+    this.eventService.addEvent(this.event).subscribe();
+    this.router.navigate(['/back-officeevenements'])
   }
 
 }

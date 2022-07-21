@@ -27,8 +27,7 @@
               <td class=" ">{{event.createdAt | date: 'dd/MM/yyyy'}}</td>
               <td class=" ">{{event.price}} TND</td>
               <td class="a-right a-right ">{{event.dateStart | date: 'dd/MM/yyyy h:mm' }}<br>{{event.dateEnd | date: 'dd/MM/yyyy h:mm' }}</td>
-              <td class=" last"><a href="#">View</a>
-            </td>
+              <td class=" last"><a routerLink="modifier/{{event._id}}">Modifier</a></td>
           </tr>
           </tbody>
         </table>
