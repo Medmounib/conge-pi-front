@@ -11,9 +11,44 @@
             <h5 class="card-title">{{article.title}}</h5>
             <p class="card-text">{{article.descr | slice:0:140}}...</p>
           </a>
+          <button style="float: right;" id="btn" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">Report</button>
         </div>
       </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">REPORT</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Reclamation</label>
+            <input type="text" class="form-control"  [(ngModel)]="rec.content" id="req" placeholder="Détails du reclamation">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" (click)="reclamer(article._id)">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $('#btn').on('click', function () {
+  $('#exampleModal').trigger('show')
+})
+</script>
+
 
     </div>
   </div>
 </div>
+
