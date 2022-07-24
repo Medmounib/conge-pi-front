@@ -36,7 +36,9 @@
             <td class=" ">{{espace.heure_debut}} - {{espace.heure_fin}} <br> {{espace.jour_debut}} - {{espace.jour_fin}}</td>
             <td class=" ">{{espace.description}}</td>
             <td class=" ">{{espace.active}}</td>
-            <td class=" last"><a href="#">View</a>
+            <td class=" last">
+              <a href="#">View</a> <br>
+              <a (click)="delete(espace._id, i)">supprimer</a>
             </td>
           </tr>
           </tbody>

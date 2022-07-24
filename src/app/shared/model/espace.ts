@@ -1,11 +1,13 @@
 export class Espace {
-  id: number;
-  title : String;
-  image : String;
-  heure_debut : Number;
-  heure_fin : Number;
-  jour_debut : String;
-  jour_fin : String;
-  description  : String;
-  active   : Boolean;
+  _id: number;
+  title : string;
+  image : string;
+  heure_debut : number;
+  heure_fin : number;
+  jour_debut : string;
+  jour_fin : string;
+  lat : number;
+  lng : number;
+  description  : string;
+  active   : boolean;
 }

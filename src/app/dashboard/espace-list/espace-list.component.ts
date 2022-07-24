@@ -20,4 +20,12 @@ export class EspaceListComponent implements OnInit {
       );
   }
 
+
+  delete(id : number, i: number):void {
+    console.log(id)
+    this.espaceService.deleteEspace(id).subscribe(
+      () => this.espaceList.splice(i, 1)
+    );
+
+  }
 }

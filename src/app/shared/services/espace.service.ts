@@ -18,4 +18,11 @@ export class EspaceService {
     return this.http.get<any[]>(this.url+"/Coordinates")
   }
 
+  add(espace:Espace){
+    return this.http.post(this.url+"/create", espace )
+  }
+  deleteEspace(id:number){
+    return this.http.delete(this.url+"/delete/"+id)
+  }
+
 }
