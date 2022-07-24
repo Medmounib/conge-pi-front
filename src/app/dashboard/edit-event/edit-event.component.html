@@ -49,7 +49,9 @@
                   <span class="required">*</span>
                 </label>
                 <div class="col-md-4 col-sm-4">
-                  <input class="form-control" type="date" name="startDate" formControlName="startDate" required="required">
+                  <input class="form-control" type="date" name="startDate" formControlName="startDate" required="required"
+                         placeholder="dd-mm-yyyy"
+                         min="2022-01-01" max="2030-12-31">
                 </div>
                 <div class="col-md-2 col-sm-2">
                   <input class="form-control" type="time" name="timeStart" formControlName="timeStart" required="required">
@@ -67,6 +69,12 @@
                 <div class="col-md-2 col-sm-2">
                   <input class="form-control" type="time" name="timeEnd" formControlName="timeEnd" required="required">
                 </div>
+              </div>
+
+              <div class="field item form-group">
+                <label class="col-form-label col-md-3 col-sm-3  label-align">Prix<span class="required">*</span></label>
+                <div class="col-md-6 col-sm-6">
+                  <input class="form-control" type="number" name="price" required="required" formControlName="price"></div>
               </div>
 
               <div class="field item form-group">

@@ -1,1 +1,66 @@
-<p>event-detail works!</p>
+<section class="doctor spad">
+  <div class="container">
+    <div class="doctor__item">
+      <div class="row">
+        <div class="col-lg-6 order-lg-1">
+          <div class="doctor__item__pic">
+            <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="">
+          </div>
+          <div class="services__appoinment mt-5">
+            <div class="services__title">
+              <h4><img src="assets/img/icons/services-icon.png" alt=""> Réserver votre place</h4>
+            </div>
+            <form action="#">
+              <input type="text" placeholder="Nom">
+              <input type="text" placeholder="Téléphone">
+              <button type="submit" class="site-btn">Réserver maintenant</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-lg-6 order-lg-2">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div class="services__details__title">
+                <span>{{ event.type }}</span>
+                <h3>{{ event.title }}</h3>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div class="services__details__widget">
+                <div class="rating">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+                <h3>TND {{event.price}}</h3>
+                <p class="text-danger">{{restPlaces}} places restants</p>
+              </div>
+            </div>
+          </div>
+          <div class="doctor__item__text">
+            <p>{{ event.description }}</p>
+            <ul>
+              <li><i class="fa fa-dollar"></i> Prix: {{event.price}} TND</li>
+              <li><i class="fa fa-users"></i> Total des places: </li>
+              <li><i class="fa fa-user-circle-o"></i> Nombre de places Restants: {{restPlaces}}</li>
+              <li><i class="fa fa-calendar-o"></i> {{ event.dateStart | date: 'dd/MM/yyyy h:mm' }} au {{ event.dateEnd | date: 'dd/MM/yyyy h:mm' }}.</li>
+            </ul>
+<!--            <div class="doctor__item__social">-->
+
+<!--              <a href="#"><i class="fa fa-facebook"></i></a>-->
+<!--              <a href="#"><i class="fa fa-twitter"></i></a>-->
+<!--              <a href="#"><i class="fa fa-instagram"></i></a>-->
+<!--              <a href="#"><i class="fa fa-dribbble"></i></a>-->
+
+<!--            </div>-->
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {EventService} from "../../shared/services/event.service";
 
 @Component({
@@ -14,6 +14,7 @@ export class EditEventComponent implements OnInit {
     title: new FormControl(''),
     type: new FormControl(''),
     description: new FormControl(''),
+    price: new FormControl(''),
     startDate: new FormControl(''),
     timeStart: new FormControl(''),
     endDate: new FormControl(''),
@@ -21,7 +22,7 @@ export class EditEventComponent implements OnInit {
     maxPlacesNumber: new FormControl(''),
   })
 
-  constructor(private router: ActivatedRoute, private eventService: EventService) { }
+  constructor(private router: ActivatedRoute, private eventService: EventService,private rt: Router) { }
 
   ngOnInit(): void {
     console.warn(this.router.snapshot.params['id']);
@@ -32,10 +33,11 @@ export class EditEventComponent implements OnInit {
           title: new FormControl(result.title),
           type: new FormControl(result.type),
           description: new FormControl(result['description']),
-          startDate: new FormControl(result['dateStart'].toLocaleString('mm-dd-yyy')),
-          timeStart: new FormControl(result['dateStart'].toLocaleString()),
-          endDate: new FormControl(result['dateEnd'].toLocaleString()),
-          timeEnd: new FormControl(result['dateEnd'].toLocaleString()),
+          price: new FormControl(result['price']),
+          // startDate: new FormControl("result['dateStart'].toLocaleString()"),
+          // timeStart: new FormControl(result['dateStart'].toLocaleString()),
+          // endDate: new FormControl(result['dateEnd'].toLocaleString()),
+          // timeEnd: new FormControl(result['dateEnd'].toLocaleString()),
           maxPlacesNumber: new FormControl(result['maxPlacesNumber']),
         });
       }
@@ -43,7 +45,11 @@ export class EditEventComponent implements OnInit {
   }
 
   collection(){
-    // this.eventService.updateEvent()
+    this.editEvent.value._id = this.router.snapshot.params['id'];
+    console.log(this.editEvent.value)
+    this.eventService.updateEvent(this.editEvent.value).subscribe(
+      (data) => this.rt.navigate(['/back-office/evenements'])
+    )
   }
 
 }

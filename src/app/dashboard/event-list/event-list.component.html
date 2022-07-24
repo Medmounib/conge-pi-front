@@ -27,7 +27,10 @@
               <td class=" ">{{event.createdAt | date: 'dd/MM/yyyy'}}</td>
               <td class=" ">{{event.price}} TND</td>
               <td class="a-right a-right ">{{event.dateStart | date: 'dd/MM/yyyy h:mm' }}<br>{{event.dateEnd | date: 'dd/MM/yyyy h:mm' }}</td>
-              <td class=" last"><a routerLink="modifier/{{event._id}}">Modifier</a></td>
+              <td class=" last text-center">
+                <a routerLink="modifier/{{event._id}}" class="mr-2"><i class="fa fa-edit"></i></a>
+                <a (click)="deleteEvent(event._id, i)"><i class="fa fa-trash text-danger"></i></a>
+              </td>
           </tr>
           </tbody>
         </table>

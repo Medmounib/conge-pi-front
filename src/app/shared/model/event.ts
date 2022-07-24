@@ -1,3 +1,5 @@
+import {Espace} from "./espace";
+
 export class Event {
   _id: number;
   title: string;
@@ -10,4 +12,5 @@ export class Event {
   dateStart: Date;
   dateEnd: Date;
   image: string;
+  espace: Espace
 }
