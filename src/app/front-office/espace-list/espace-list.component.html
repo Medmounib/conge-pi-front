@@ -1,16 +1,19 @@
 <div #map style="width:100%;height:400px;border: 1px solid black;"></div>
 <div class="row">
   <div class="col-lg-4 spad">
-    <div class="blog__item">
+    <div class="blog__item p-5">
       <h1>Categories</h1>
       <div class="col-lg-12" *ngFor="let categorie of categorieList, let i= index">
-        <p>{{ categorie.title }}</p>
+        <a (click)="filtre( categorie._id)">
+<!--          <input-->
+<!--          type="checkbox" class="radio" [checked]="false" value="1" name="category{{i}}">-->
+        {{ categorie.title }}</a>
       </div>
     </div>
   </div>
   <div class="col-lg-8">
     <section class="blog spad">
-      <h1>ESPACES</h1>
+      <h1>Les meilleurs à Tunisie</h1>
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12" *ngFor="let espace of espaceList, let i= index" >
           <div class="blog__item">
