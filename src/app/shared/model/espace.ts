@@ -9,5 +9,6 @@ export class Espace {
   lat : number;
   lng : number;
   description  : string;
-  active   : boolean;
+  user :[];
+  categorieEspace :[];
 }

@@ -12,6 +12,7 @@ import {FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { EditEventComponent } from './edit-event/edit-event.component';
 import { EspaceListComponent } from './espace-list/espace-list.component';
 import { AddEspaceComponent } from './add-espace/add-espace.component';
+import { EspaceEditComponent } from './espace-edit/espace-edit.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AddEspaceComponent } from './add-espace/add-espace.component';
     EventFormComponent,
     EditEventComponent,
     EspaceListComponent,
-    AddEspaceComponent
+    AddEspaceComponent,
+    EspaceEditComponent
   ],
   imports: [
     CommonModule,

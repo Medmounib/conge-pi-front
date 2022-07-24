@@ -1,21 +1,8 @@
 <div class="col-md-12 col-sm-12  ">
   <div class="x_panel">
-    <div class="x_title">
-      <h2>Table design <small>Custom design</small></h2>
-      <ul class="nav navbar-right panel_toolbox">
-        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 31px, 0px);">
-            <a class="dropdown-item" href="#">Settings 1</a>
-            <a class="dropdown-item" href="#">Settings 2</a>
-          </div>
-        </li>
-        <li><a class="close-link"><i class="fa fa-close"></i></a>
-        </li>
-      </ul>
-      <div class="clearfix"></div>
+    <div class="x_title align-content-center">
+      <h2>Centres De Bien-Être <small></small></h2>
+      <a (click)="addform()" class="btn btn-success "><i class="fa fa-plus" aria-hidden="true"></i> Ajouter</a><br><br>
     </div>
     <div class="x_content">
       <div class="table-responsive">
@@ -25,20 +12,19 @@
             <th class="column-title">Titre </th>
             <th class="column-title">Horaires </th>
             <th class="column-title">description </th>
-            <th class="column-title">active </th>
             <th class="column-title no-link last"><span class="nobr">Action</span>
             </th>
           </tr>
           </thead>
           <tbody>
           <tr *ngFor="let espace of espaceList, let i = index" class="even pointer">
-            <td class=" ">{{espace.title}}</td>
-            <td class=" ">{{espace.heure_debut}} - {{espace.heure_fin}} <br> {{espace.jour_debut}} - {{espace.jour_fin}}</td>
-            <td class=" ">{{espace.description}}</td>
-            <td class=" ">{{espace.active}}</td>
-            <td class=" last">
-              <a href="#">View</a> <br>
-              <a (click)="delete(espace._id, i)">supprimer</a>
+            <td class="">{{espace.title}}</td>
+            <td class="">{{espace.heure_debut}} - {{espace.heure_fin}} <br> {{espace.jour_debut}} - {{espace.jour_fin}}</td>
+            <td class="">{{espace.description}}</td>
+            <td class="last">
+<!--              <a href="#">View</a> <br>-->
+              <a (click)="delete(espace._id, i)" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a><br><br>
+              <a (click)="updateFrom(espace._id)" class="btn btn-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
             </td>
           </tr>
           </tbody>

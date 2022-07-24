@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {Espace} from "../../shared/model/espace";
 import {EspaceService} from "../../shared/services/espace.service";
 import {Event} from "../../shared/model/event";
+import {Router} from "@angular/router";
+import {CategoriesEspace} from "../../shared/model/categoriesEspace";
+import {categoriesEspaceService} from "../../shared/services/categoriesEspace.service";
 
 @Component({
   selector: 'app-espace-list',
@@ -11,21 +14,26 @@ import {Event} from "../../shared/model/event";
 export class EspaceListComponent implements OnInit {
 
   espaceList: Espace[];
-
-  constructor(private espaceService: EspaceService) { }
+  constructor(private espaceService: EspaceService,private router : Router) { }
 
   ngOnInit(): void {
       this.espaceService.getList().subscribe(
         (data: Espace[])=> this.espaceList = data
       );
   }
+  addform():void {
 
+    this.router.navigate(['/back-office/espaces/add'])
 
+  }
   delete(id : number, i: number):void {
-    console.log(id)
-    this.espaceService.deleteEspace(id).subscribe(
-      () => this.espaceList.splice(i, 1)
-    );
-
+    if(confirm("Are you sure? ")) {
+      this.espaceService.deleteEspace(id).subscribe(
+        () => this.espaceList.splice(i, 1)
+      );
+    }
+  }
+  updateFrom(id : number):void {
+    this.router.navigate(['/back-office/espaces/edit/'+id])
   }
 }

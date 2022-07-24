@@ -12,59 +12,53 @@
           <h2></h2>
         </div>
         <div class="x_content">
-          <form #f="ngForm">
+          <form [formGroup]="editEspace" (ngSubmit)="collection()">
             <span class="section">Personal Info</span>
             <div class="field item form-group">
               <label class="col-form-label col-md-3 col-sm-3  label-align">title<span class="required">*</span></label>
               <div class="col-md-6 col-sm-6">
-                <input class="form-control" data-validate-length-range="6" [(ngModel)]="espace.title" data-validate-words="2" name="title" placeholder="title" required="required">
-              </div>
-            </div>
-            <div class="field item form-group">
-              <label class="col-form-label col-md-3 col-sm-3  label-align">Image<span class="required">*</span></label>
-              <div class="col-md-6 col-sm-6">
-                <input class="form-control" type="file" [(ngModel)]="espace.image" name="image" required="required">
+                <input class="form-control" data-validate-length-range="6" formControlName="title" data-validate-words="2" name="title" placeholder="title" required="required">
               </div>
             </div>
             <div class="field item form-group">
               <label class="col-form-label col-md-3 col-sm-3  label-align">latitude<span class="required">*</span></label>
               <div class="col-md-3 col-sm-3">
-                <input class="form-control"  [(ngModel)]="espace.lat" name="lat" type="text"></div>
+                <input class="form-control" formControlName="lat" name="lat" type="text"></div>
             </div>
             <div class="field item form-group">
               <label class="col-form-label col-md-3 col-sm-3  label-align">longitude<span class="required">*</span></label>
               <div class="col-md-3 col-sm-3">
-                <input class="form-control" name="lng" [(ngModel)]="espace.lng" type="text"></div></div>
+                <input class="form-control" name="lng" formControlName="lng" type="text"></div></div>
             <div class="field item form-group">
               <label class="col-form-label col-md-3 col-sm-3  label-align">Horaires de travail <span class="required">*</span></label>
               <div class="col-md-2 col-sm-2">
-                <input class="form-control" [(ngModel)]="espace.heure_debut" name="heure_debut" type="number" required="required">
+                <input class="form-control" formControlName="heure_debut" name="heure_debut" type="number" required="required">
               </div>
               <div class="col-md-2 col-sm-2">
-                <input class="form-control" [(ngModel)]="espace.heure_fin" name="heure_fin" type="number" required="required">
+                <input class="form-control" formControlName="heure_fin" name="heure_fin" type="number" required="required">
               </div>
             </div>
             <div class="field item form-group">
               <label class="col-form-label col-md-3 col-sm-3  label-align">du <span class="required"></span></label>
               <div class="col-md-3 col-sm-3">
-                <input class="form-control" [(ngModel)]="espace.jour_debut" name="jour_debut" type="text" required="required">
+                <input class="form-control" formControlName="jour_debut"  name="jour_debut" type="text" required="required">
               </div>
               <label class="col-form-label label-align">au <span class="required"></span></label>
 
               <div class="col-md-3 col-sm-3">
-                <input class="form-control" [(ngModel)]="espace.jour_fin" name="jour_fin" type="text" required="required">
+                <input class="form-control" formControlName="jour_fin" name="jour_fin" type="text" required="required">
               </div>
             </div>
             <div class="field item form-group">
               <label class="col-form-label col-md-3 col-sm-3  label-align">description<span class="required">*</span></label>
               <div class="col-md-6 col-sm-6">
-                <textarea class="form-control" required="required" [(ngModel)]="espace.description" name="description"></textarea></div>
+                <textarea class="form-control" required="required" formControlName="description" name="description"></textarea></div>
             </div>
             <div class="field item form-group">
               <label class="col-form-label col-md-3 col-sm-3  label-align">Catégorie<span class="required">*</span></label>
               <div class="col-md-6 col-sm-6">
                 <select name="categorieEspace" class="form-control"
-                        [(ngModel)]="espace.categorieEspace">
+                        formControlName="categorieEspace">
                   <option value="{{categorieEspace._id}}"  *ngFor="let categorieEspace of categorieList, let i = index">
                     {{categorieEspace.title}}
                   </option>
@@ -74,7 +68,7 @@
             <div class="ln_solid">
               <div class="form-group">
                 <div class="col-md-6 offset-md-3">
-                  <button type="submit" class="btn btn-success" (click)="save()">ajouter</button>
+                  <button type="submit" class="btn btn-success">Modifier</button>
                   <button type="reset" class="btn btn-dark">annuler</button>
                 </div>
               </div>
