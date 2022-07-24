@@ -10,7 +10,11 @@
           <thead>
           <tr class="headings">
             <th class="column-title">Titre </th>
+            <th class="column-title">Image </th>
             <th class="column-title">Horaires </th>
+            <th class="column-title">Jours </th>
+            <th class="column-title">Latitude </th>
+            <th class="column-title">Longitude </th>
             <th class="column-title">description </th>
             <th class="column-title no-link last"><span class="nobr">Action</span>
             </th>
@@ -19,10 +23,13 @@
           <tbody>
           <tr *ngFor="let espace of espaceList, let i = index" class="even pointer">
             <td class="">{{espace.title}}</td>
-            <td class="">{{espace.heure_debut}} - {{espace.heure_fin}} <br> {{espace.jour_debut}} - {{espace.jour_fin}}</td>
+            <td class=""><img src="{{espace.image}}" /></td>
+            <td class="">{{espace.heure_debut}} - {{espace.heure_fin}} </td>
+            <td class=""> du {{espace.jour_debut}} au {{espace.jour_fin}}</td>
+            <td class="">{{espace.lat}}</td>
+            <td class="">{{espace.lng}}</td>
             <td class="">{{espace.description}}</td>
             <td class="last">
-<!--              <a href="#">View</a> <br>-->
               <a (click)="delete(espace._id, i)" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a><br><br>
               <a (click)="updateFrom(espace._id)" class="btn btn-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
             </td>
