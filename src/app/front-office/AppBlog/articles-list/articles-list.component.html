@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let article of articles">
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <a [routerLink]="['/blog/article/',article._id]">
+            <div class="text-center">
+              <img src="assets/img/blog/download.png" class="rounded" alt="...">
+            </div>
+            <h5 class="card-title">{{article.title}}</h5>
+            <p class="card-text">{{article.descr | slice:0:140}}...</p>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

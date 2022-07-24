@@ -12,6 +12,14 @@ import {EspaceListComponent} from "./espace-list/espace-list.component";
 import {SharedModule} from "../shared/shared.module";
 import {FrontAppComponent} from './front-app/front-app.component';
 import {CommonModule} from "@angular/common";
+import { ArticlesListComponent } from './AppBlog/articles-list/articles-list.component';
+import { FormsModule } from '@angular/forms';
+import { ArticleContainerComponent } from './AppBlog/article-container/article-container.component';
+import { ArticleFormComponent } from './AppBlog/article-form/article-form.component';
+import { ArticleDetComponent } from './AppBlog/article-det/article-det.component';
+import { NavComponent } from './AppBlog/nav/nav.component';
+import { MesArticlesComponent } from './AppBlog/mes-articles/mes-articles.component';
+import { ArtUpdateComponent } from './AppBlog/art-update/art-update.component';
 
 
 @NgModule({
@@ -24,12 +32,20 @@ import {CommonModule} from "@angular/common";
     ProductListComponent,
     EventDetailComponent,
     EspaceListComponent,
-    FrontAppComponent
+    FrontAppComponent,
+    ArticlesListComponent,
+    ArticleContainerComponent,
+    ArticleFormComponent,
+    ArticleDetComponent,
+    NavComponent,
+    MesArticlesComponent,
+    ArtUpdateComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
-    FrontOfficeRoutingModule
+    FrontOfficeRoutingModule,
+    FormsModule
   ]
 })
 export class FrontOfficeModule { }
