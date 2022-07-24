@@ -12,6 +12,7 @@ import {EspaceListComponent} from "./espace-list/espace-list.component";
 import {SharedModule} from "../shared/shared.module";
 import {FrontAppComponent} from './front-app/front-app.component';
 import {CommonModule} from "@angular/common";
+import {ProductCardComponent} from "./product-card/product-card.component";
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {CommonModule} from "@angular/common";
     ProductListComponent,
     EventDetailComponent,
     EspaceListComponent,
-    FrontAppComponent
+    FrontAppComponent,
+    ProductCardComponent
   ],
   imports: [
     CommonModule,
