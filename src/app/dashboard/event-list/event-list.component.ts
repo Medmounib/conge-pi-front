@@ -20,4 +20,10 @@ export class EventListComponent implements OnInit {
     );
   }
 
+  deleteEvent(id: number, i: number): void {
+    this.eventService.deleteEvent(id).subscribe(
+      () => this.eventList.splice(i, 1)
+    );
+  }
+
 }

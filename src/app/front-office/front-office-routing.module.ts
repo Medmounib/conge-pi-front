@@ -4,11 +4,13 @@ import {EventListComponent} from "./event-list/event-list.component";
 import {ProductListComponent} from "./product-list/product-list.component";
 import {EspaceListComponent} from "./espace-list/espace-list.component";
 import {FrontAppComponent} from "./front-app/front-app.component";
+import {EventDetailComponent} from "./event-detail/event-detail.component";
 
 const routes: Routes = [
   {
     path: '', component: FrontAppComponent, children: [
       {path: 'evenements', component: EventListComponent},
+      {path: 'evenements/show/:id', component: EventDetailComponent},
       {path: 'store', component: ProductListComponent},
       {path: 'espaces', component: EspaceListComponent}
     ]

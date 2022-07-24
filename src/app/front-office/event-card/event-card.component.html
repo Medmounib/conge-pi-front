@@ -16,6 +16,7 @@
       <div class="user-info">
         <h5>July Dec</h5>
         <small>{{ event.dateStart | date: 'dd/MM/yyyy h:mm' }} au {{ event.dateEnd | date: 'dd/MM/yyyy h:mm' }}</small>
+        <a class="btn btn-primary" routerLink="show/{{event._id}}"><i class="fa fa-eye"></i></a>
       </div>
     </div>
   </div>

@@ -27,7 +27,7 @@ export class EventFormComponent implements OnInit {
     this.event.dateStart = new Date(this.startDate+" " + this.timeStart);
     this.event.dateEnd = new Date(this.endDate+" " + this.timeEnd);
     this.eventService.addEvent(this.event).subscribe();
-    this.router.navigate(['/back-officeevenements'])
+    this.router.navigate(['/back-office/evenements'])
   }
 
 }
