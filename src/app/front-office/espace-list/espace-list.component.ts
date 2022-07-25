@@ -2,7 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import {Espace} from "../../shared/model/espace";
 import {CategoriesEspace} from "../../shared/model/categoriesEspace";
 import {EspaceService} from "../../shared/services/espace.service";
-import {categoriesEspaceService} from "../../shared/services/categoriesEspace.service";
+import {CategoriesEspaceService} from "../../shared/services/categoriesEspace.service";
 import {} from 'googlemaps';
 import { ViewChild } from '@angular/core';
 
@@ -18,7 +18,7 @@ export class EspaceListComponent implements OnInit {
   map: google.maps.Map;
   markers : any[];
 
-  constructor(private espaceService: EspaceService, private categorieService: categoriesEspaceService) { }
+  constructor(private espaceService: EspaceService, private categorieService: CategoriesEspaceService) { }
   ngOnInit(): void {
    this.espaceService.getList().subscribe(
       (data: Espace[]) => this.espaceList = data

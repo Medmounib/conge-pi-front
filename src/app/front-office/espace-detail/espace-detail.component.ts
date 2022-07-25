@@ -20,6 +20,7 @@ export class EspaceDetailComponent implements OnInit {
   espace: Espace;
   avisEspaces: AvisEspace[];
   avis: AvisEspace;
+
   constructor( private espaceService: EspaceService,
                private route: ActivatedRoute,
                private avisEspaceService : avisEspaceService,
@@ -39,7 +40,9 @@ export class EspaceDetailComponent implements OnInit {
   ngOnInit(): void {
     this.avis = new AvisEspace();
     this.getCoord();
+
   }
+
   getCoord(): void {
     this.espaceService.getCoord().subscribe((response: any[])  => {
         this.marker = response;
@@ -50,17 +53,18 @@ export class EspaceDetailComponent implements OnInit {
         };
         this.map = new google.maps.Map(this.mapElement.nativeElement, mapProperties);
         let that = this;
-        this.marker.forEach(function(value) {
+        console.log(this.marker)
+      let th = this;
+      this.marker.forEach(function(value) {
+          if ( value._id == th.espace._id ){
             var marker = new google.maps.Marker({
               position: value,
               map: that.map,
               title: 'markers'
             });
           }
-        )
-      }
-    );
-
+      })
+    });
   };
   show(): void {
     this.showForm=true;
