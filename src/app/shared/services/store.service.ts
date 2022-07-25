@@ -31,7 +31,7 @@ export class StoreService {
   }
 
   public deleteProduct(id: string) {
-    return this.http.get<Product[]>(`${this.url}/product/update/`+id);
+    return this.http.get<Product[]>(`${this.url}/product/delete/`+id);
   }
 
   public getAllCategories() {
