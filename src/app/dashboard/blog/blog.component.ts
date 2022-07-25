@@ -13,7 +13,9 @@ export class BlogComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getList().subscribe(
-      (data: Article[]) => this.artList = data
+      (data: Article[]) => { this.artList = data;
+      console.log(this.artList);
+    }
     );
   }
 
