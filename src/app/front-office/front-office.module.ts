@@ -18,6 +18,12 @@ import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
 import {FormsModule} from "@angular/forms";
 import { CalendarComponent } from './calendar/calendar.component';
 import {FullCalendarModule} from "@fullcalendar/angular";
+import { SignInComponent } from './sign-in/sign-in.component';
+import {LoginComponent} from "./sign-in/login/login.component";
+import {PasswordForgottenComponent} from "./sign-in/password-forgotten/password-forgotten.component";
+import {RegisterComponent} from "./sign-in/register/register.component";
+import {ResetPasswordComponent} from "./sign-in/reset-password/reset-password.component";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -33,7 +39,12 @@ import {FullCalendarModule} from "@fullcalendar/angular";
     FrontAppComponent,
     ProductCardComponent,
     EspaceDetailComponent,
-    CalendarComponent
+    CalendarComponent,
+    SignInComponent,
+    LoginComponent,
+    PasswordForgottenComponent,
+    RegisterComponent,
+    ResetPasswordComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +52,8 @@ import {FullCalendarModule} from "@fullcalendar/angular";
     FormsModule,
     FrontOfficeRoutingModule,
     NgbRatingModule,
-    FullCalendarModule
+    FullCalendarModule,
+    ReactiveFormsModule
   ]
 })
 export class FrontOfficeModule { }
