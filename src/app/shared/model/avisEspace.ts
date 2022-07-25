@@ -1,8 +1,9 @@
-export class CategoriesEspace {
+export class AvisEspace {
   _id: number;
-  title   : String;
-  type : String;
-  description  : String;  espace :[];
-
-
+  text   : String;
+  who : string;
+  date : Date;
+  note : number;
+  description  : String;
+  espace :[];
 }

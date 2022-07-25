@@ -2,12 +2,12 @@
 <div class="row">
   <div class="col-lg-4 spad">
     <div class="blog__item p-5">
-      <h1>Categories</h1>
-      <div class="col-lg-12" *ngFor="let categorie of categorieList, let i= index">
-        <a (click)="filtre( categorie._id)">
-<!--          <input-->
-<!--          type="checkbox" class="radio" [checked]="false" value="1" name="category{{i}}">-->
-        {{ categorie.title }}</a>
+      <h3 class="mb-4">Categories</h3>
+      <div class="col-lg-12 mt-2" *ngFor="let categorie of categorieList, let i= index">
+        <a (click)="filtre(categorie._id)" class="d-flex align-items-center">
+          <div><input type="radio" class="custom-checkbox" value="1" name="category"> </div>
+          <div class="ml-2 category-name"> {{ categorie.title }}</div>
+        </a>
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@
               <img src="{{ espace.image }}" alt="">
             </div>
             <div class="blog__item__text">
-              <h2><a href="#">{{ espace.title }}</a></h2>
+              <h2><a routerLink="/espaces/detail/{{ espace._id }}">{{ espace.title }}</a></h2>
               <p>{{ espace.description }}</p>
               <ul>
                 <li>{{ espace.heure_debut }}h - {{ espace.heure_fin }}h </li>
@@ -30,11 +30,11 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-12 text-center">
-          <div class="load__more">
-            <a href="#" class="primary-btn">Voir plus</a>
-          </div>
-        </div>
+<!--        <div class="col-lg-12 text-center">-->
+<!--          <div class="load__more">-->
+<!--            <a href="#" class="primary-btn">Voir plus</a>-->
+<!--          </div>-->
+<!--        </div>-->
       </div>
     </section>
   </div>

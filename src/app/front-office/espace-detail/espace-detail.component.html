@@ -1,0 +1,42 @@
+<section class="about spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6">
+        <img src="{{espace.image}}" class="img-responsive" width="100%">
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="about__text">
+          <div class="section-title">
+            <span>À PROPOS DE NOUS</span>
+            <h2>Bienvenue à {{ espace.title}}</h2>
+          </div>
+          <p>{{espace.description}}</p>
+          <ul>
+            <li><i class="fa fa-check-circle"></i> {{espace.heure_debut}}h - à - {{espace.heure_fin}}h </li>
+            <li><i class="fa fa-check-circle"></i> Du {{espace.jour_debut}} au {{espace.jour_fin}} </li>
+          </ul>
+
+          <div #map style="width:100%;height:150px;border: 1px solid black;"></div>
+
+          <a (click)="show()" class="primary-btn normal-btn">ajouter votre avis</a>
+        </div>
+      </div>
+      <div class="col-lg-12" >
+        <div class="row">
+          <div class="col-lg-12" >
+
+            <ngb-rating [max]="2" [(rate)]="starRating" [readonly]="true">
+          </ngb-rating>
+          </div>
+
+        </div>
+
+
+        <div class="row" [hidden]="!showForm">
+          <h3>Ajouter avis</h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

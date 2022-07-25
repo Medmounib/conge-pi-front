@@ -12,6 +12,8 @@ import {EspaceListComponent} from "./espace-list/espace-list.component";
 import {SharedModule} from "../shared/shared.module";
 import {FrontAppComponent} from './front-app/front-app.component';
 import {CommonModule} from "@angular/common";
+import { EspaceDetailComponent } from './espace-detail/espace-detail.component';
+import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
 
 
 @NgModule({
@@ -24,12 +26,14 @@ import {CommonModule} from "@angular/common";
     ProductListComponent,
     EventDetailComponent,
     EspaceListComponent,
-    FrontAppComponent
+    FrontAppComponent,
+    EspaceDetailComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
-    FrontOfficeRoutingModule
+    FrontOfficeRoutingModule,
+    NgbRatingModule
   ]
 })
 export class FrontOfficeModule { }
