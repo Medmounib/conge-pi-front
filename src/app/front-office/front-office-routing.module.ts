@@ -43,7 +43,7 @@ const routes: Routes = [
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'password-forgotten', component: PasswordForgottenComponent},
-      {path: 'reset-password', component: ResetPasswordComponent},
+      {path: 'reset-password/:id/:code', component: ResetPasswordComponent},
       {path: '**', redirectTo:'login'}
     ]
   }
