@@ -13,6 +13,8 @@ import {SharedModule} from "../shared/shared.module";
 import {FrontAppComponent} from './front-app/front-app.component';
 import {CommonModule} from "@angular/common";
 import {ProductCardComponent} from "./product-card/product-card.component";
+import { CalendarComponent } from './calendar/calendar.component';
+import {FullCalendarModule} from "@fullcalendar/angular";
 
 
 @NgModule({
@@ -26,12 +28,14 @@ import {ProductCardComponent} from "./product-card/product-card.component";
     EventDetailComponent,
     EspaceListComponent,
     FrontAppComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    CalendarComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
-    FrontOfficeRoutingModule
+    FrontOfficeRoutingModule,
+    FullCalendarModule
   ]
 })
 export class FrontOfficeModule { }
