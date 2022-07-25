@@ -1,9 +1,11 @@
+import {Espace} from "./espace";
+
 export class AvisEspace {
   _id: number;
-  text   : String;
+  text   : string;
   who : string;
   date : Date;
   note : number;
-  description  : String;
-  espace :[];
+  description  : string;
+  espace:Espace;
 }

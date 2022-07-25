@@ -15,6 +15,7 @@ import {CommonModule} from "@angular/common";
 import {ProductCardComponent} from "./product-card/product-card.component";
 import { EspaceDetailComponent } from './espace-detail/espace-detail.component';
 import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
   imports: [
     CommonModule,
     SharedModule,
+    FormsModule,
     FrontOfficeRoutingModule,
     NgbRatingModule
   ]

@@ -1,7 +1,7 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Espace} from "../../shared/model/espace";
 import {EspaceService} from "../../shared/services/espace.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {} from 'googlemaps';
 import {AvisEspace} from "../../shared/model/avisEspace";
 import {avisEspaceService} from "../../shared/services/avisEspace.service";
@@ -18,27 +18,29 @@ export class EspaceDetailComponent implements OnInit {
   map: google.maps.Map;
   marker : any[];
   espace: Espace;
-  avisEspace: AvisEspace[];
-  constructor( private espaceService: EspaceService,private route: ActivatedRoute, private avisEspaceService : avisEspaceService) {
+  avisEspaces: AvisEspace[];
+  avis: AvisEspace;
+  constructor( private espaceService: EspaceService,
+               private route: ActivatedRoute,
+               private avisEspaceService : avisEspaceService,
+               private router : Router) {
     this.espaceService.getById(this.route.snapshot.params['id']).subscribe(
       (result) => {
         this.espace = result;
       }
     );
-
     this.avisEspaceService.getListByEspace(this.route.snapshot.params['id']).subscribe(
       (result) => {
-        this.avisEspace = result;
+        this.avisEspaces = result;
       }
     );
-    console.log(this.avisEspace)
   }
 
   ngOnInit(): void {
+    this.avis = new AvisEspace();
     this.getCoord();
   }
   getCoord(): void {
-
     this.espaceService.getCoord().subscribe((response: any[])  => {
         this.marker = response;
         const mapProperties = {
@@ -63,4 +65,10 @@ export class EspaceDetailComponent implements OnInit {
   show(): void {
     this.showForm=true;
   };
+  save(){
+    this.avis.espace = this.espace;
+    this.avisEspaceService.add(this.avis).subscribe();
+    // this.router;
+
+  }
 }

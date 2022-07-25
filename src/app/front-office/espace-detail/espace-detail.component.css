@@ -5,4 +5,7 @@ ngb-rating {
 ngb-rating span.visually-hidden {
   display: none !important;
 }
+.consultation__form {
+  margin-top: 0px !important;
+}
 

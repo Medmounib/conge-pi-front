@@ -7,6 +7,7 @@
       <div class="col-lg-6 col-md-6">
         <div class="about__text">
           <div class="section-title">
+
             <span>À PROPOS DE NOUS</span>
             <h2>Bienvenue à {{ espace.title}}</h2>
           </div>
@@ -18,25 +19,70 @@
 
           <div #map style="width:100%;height:150px;border: 1px solid black;"></div>
 
-          <a (click)="show()" class="primary-btn normal-btn">ajouter votre avis</a>
         </div>
       </div>
       <div class="col-lg-12" >
-        <div class="row">
-          <div class="col-lg-12" >
-
-            <ngb-rating [max]="2" [(rate)]="starRating" [readonly]="true">
-          </ngb-rating>
+        <div class="row mb-5">
+          <div class="col-lg-6">
+            <div class="row" *ngFor="let avis of avisEspaces" >
+              <h4>Avis : {{avis.who}} </h4>
+              <p style="color: grey">le {{avis.date}}</p>
+              <p>{{avis.text}}</p>
+              <p>{{avis.description}}</p>
+              <ngb-rating [max]="avis.note" [(rate)]="starRating" [readonly]="true">
+              </ngb-rating>
+              <hr>
+            </div>
           </div>
-
+          <div class="col-lg-6" >
+            <a (click)="show()" class="primary-btn normal-btn mt-5">ajouter votre avis</a>
+            <div class="row" [hidden]="!showForm">
+              <div class="services__appoinment">
+                <div class="services__title mt-5">
+                  <h4><img src="/assets/img/icons/services-icon.png" alt=""> Ajouter avis</h4>
+                </div>
+                <form  #f="ngForm">
+                  <input type="text" [(ngModel)]="avis.who" name="who" placeholder="Votre nom et prénom">
+                  <input type="text" [(ngModel)]="avis.text" name="text" placeholder="Avis">
+                  <input type="text" [(ngModel)]="avis.description" name="description" placeholder="description">
+                  <input type="number" [(ngModel)]="avis.note" name="note" placeholder="nombre d'étoile">
+                  <div class="datepicker__item">
+                    <input type="text" [(ngModel)]="avis.date" name="date" placeholder="Date" class="datepicker hasDatepicker" id="dp1658760769008">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <button type="submit" class="site-btn" (click)="save()">valider votre avis</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-
-
-        <div class="row" [hidden]="!showForm">
-          <h3>Ajouter avis</h3>
+        <div class="row mt-5">
+          <!--partie saif-->
+          <div class="consultation__form">
+            <div class="section-title">
+              <span>REQUEST FOR YOUR</span>
+              <h2>Consultation</h2>
+            </div>
+            <form action="#">
+              <input type="text" placeholder="Name">
+              <input type="text" placeholder="Email">
+              <div class="datepicker__item">
+                <input type="text" placeholder="Date" class="datepicker hasDatepicker" id="dp1658760950608">
+                <i class="fa fa-calendar"></i>
+              </div>
+              <select style="display: none;">
+                <option value="">Type of service</option>
+                <option value="">Advanced equipment</option>
+                <option value="">Qualified doctors</option>
+                <option value="">Certified services</option>
+                <option value="">Emergency care</option>
+              </select><div class="nice-select" tabindex="0"><span class="current">Type of service</span><ul class="list"><li data-value="" class="option selected">Type of service</li><li data-value="" class="option">Advanced equipment</li><li data-value="" class="option">Qualified doctors</li><li data-value="" class="option">Certified services</li><li data-value="" class="option">Emergency care</li></ul></div>
+              <button type="submit" class="site-btn">Book appoitment</button>
+            </form>
+          </div>
+          <!--partie saif-->
         </div>
       </div>
-
     </div>
   </div>
 </section>
