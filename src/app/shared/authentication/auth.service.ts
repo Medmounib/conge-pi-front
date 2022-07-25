@@ -74,7 +74,7 @@ export class AuthService {
     this.router.navigate(['/auth/login']).then();
   }
 
-  getUserSubject(): BehaviorSubject<User> {
+  getConnectedUserSubject(): BehaviorSubject<User> {
     return this.userSubject;
 }
 }
