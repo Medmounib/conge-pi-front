@@ -16,6 +16,8 @@ import {ProductCardComponent} from "./product-card/product-card.component";
 import { EspaceDetailComponent } from './espace-detail/espace-detail.component';
 import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
 import {FormsModule} from "@angular/forms";
+import { CalendarComponent } from './calendar/calendar.component';
+import {FullCalendarModule} from "@fullcalendar/angular";
 
 
 @NgModule({
@@ -30,14 +32,16 @@ import {FormsModule} from "@angular/forms";
     EspaceListComponent,
     FrontAppComponent,
     ProductCardComponent,
-    EspaceDetailComponent
+    EspaceDetailComponent,
+    CalendarComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     FormsModule,
     FrontOfficeRoutingModule,
-    NgbRatingModule
+    NgbRatingModule,
+    FullCalendarModule
   ]
 })
 export class FrontOfficeModule { }

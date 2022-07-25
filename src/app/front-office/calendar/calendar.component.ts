@@ -1,0 +1,25 @@
+import { Component, OnInit } from '@angular/core';
+import {CalendarOptions} from "@fullcalendar/angular";
+
+@Component({
+  selector: 'app-calendar',
+  templateUrl: './calendar.component.html',
+  styleUrls: ['./calendar.component.css']
+})
+export class CalendarComponent implements OnInit {
+  calendarOptions: CalendarOptions = {
+    height: '100%',
+    initialView: 'dayGridMonth',
+    fixedWeekCount: false,
+    displayEventTime: true,
+    editable: true,
+    lazyFetching: false,
+    nowIndicator: true,
+    events: [],
+  };
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
