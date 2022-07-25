@@ -12,7 +12,7 @@ import {environment} from "../../../../environments/environment";
 })
 export class ResetPasswordComponent implements OnInit {
   password = '';
-  url = environment.host;
+  url = environment.api;
   isLoading = true;
   isError = false;
 
@@ -30,7 +30,8 @@ export class ResetPasswordComponent implements OnInit {
   requestNewPassword() {
     this.isError = false;
     const id = this.activatedRoute.snapshot.params['id'];
-    this.http.get(this.url + '/clients/reset/' + id).subscribe((response: any) => {
+    const code = this.activatedRoute.snapshot.params['code']
+    this.http.get(this.url + '/users/reset/' + id + '/' + code).subscribe((response: any) => {
       this.isLoading = false;
       this.password = response.newPassword;
     }, () => {
