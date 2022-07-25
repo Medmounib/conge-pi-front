@@ -28,7 +28,6 @@ export class EspaceListComponent implements OnInit {
       (data: CategoriesEspace[]) => this.categorieList = data
    );
     this.getCoord();
-
   }
   getCoord(): void {
 
@@ -51,6 +50,13 @@ export class EspaceListComponent implements OnInit {
           }
         )
       }
+    );
+
+  };
+
+  filtre(idCategory : number): void {
+    this.espaceService.getListByCategory(idCategory).subscribe(
+      (data: Espace[]) => this.espaceList = data
     );
 
   }

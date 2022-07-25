@@ -13,6 +13,8 @@ import {SharedModule} from "../shared/shared.module";
 import {FrontAppComponent} from './front-app/front-app.component';
 import {CommonModule} from "@angular/common";
 import {ProductCardComponent} from "./product-card/product-card.component";
+import { EspaceDetailComponent } from './espace-detail/espace-detail.component';
+import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
 
 
 @NgModule({
@@ -26,12 +28,14 @@ import {ProductCardComponent} from "./product-card/product-card.component";
     EventDetailComponent,
     EspaceListComponent,
     FrontAppComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    EspaceDetailComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
-    FrontOfficeRoutingModule
+    FrontOfficeRoutingModule,
+    NgbRatingModule
   ]
 })
 export class FrontOfficeModule { }
