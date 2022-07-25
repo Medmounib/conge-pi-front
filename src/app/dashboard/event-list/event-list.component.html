@@ -1,0 +1,40 @@
+<div class="col-md-12 col-sm-12  ">
+  <div class="x_panel">
+    <div class="x_title">
+      <h2>Liste des événements</h2>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+      <div class="table-responsive">
+        <table class="table table-striped jambo_table bulk_action">
+          <thead>
+          <tr class="headings">
+            <th class="column-title">Titre </th>
+            <th class="column-title">Type </th>
+            <th class="column-title">Nombre de place maximale </th>
+            <th class="column-title">Créé le</th>
+            <th class="column-title">Prix </th>
+            <th class="column-title">Dates </th>
+            <th class="column-title no-link last"><span class="nobr">Action</span>
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let event of eventList, let i = index" class="even pointer">
+              <td class=" ">{{event.title}}</td>
+              <td class=" ">{{event.type}}</td>
+              <td class=" ">{{event.maxPlacesNumber}}</td>
+              <td class=" ">{{event.createdAt | date: 'dd/MM/yyyy'}}</td>
+              <td class=" ">{{event.price}} TND</td>
+              <td class="a-right a-right ">{{event.dateStart | date: 'dd/MM/yyyy h:mm' }}<br>{{event.dateEnd | date: 'dd/MM/yyyy h:mm' }}</td>
+              <td class=" last text-center">
+                <a routerLink="modifier/{{event._id}}" class="mr-2"><i class="fa fa-edit"></i></a>
+                <a (click)="deleteEvent(event._id, i)"><i class="fa fa-trash text-danger"></i></a>
+              </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

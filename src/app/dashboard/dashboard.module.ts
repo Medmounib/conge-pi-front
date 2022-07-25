@@ -4,20 +4,32 @@ import {DashboardRoutingModule} from './dashboard-routing.module';
 import {DashboardHeaderComponent} from './dashboard-header/dashboard-header.component';
 import {DashboardAppComponent} from './dashboard-app/dashboard-app.component';
 import {SharedModule} from "../shared/shared.module";
-import {CommonModule} from "@angular/common";
+import {CommonModule, DatePipe} from "@angular/common";
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { EventListComponent } from './event-list/event-list.component';
+import { EventFormComponent } from './event-form/event-form.component';
+import {FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { EditEventComponent } from './edit-event/edit-event.component';
+import { EspaceListComponent } from './espace-list/espace-list.component';
+import { AddEspaceComponent } from './add-espace/add-espace.component';
+import { EspaceEditComponent } from './espace-edit/espace-edit.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ProductListActionsComponent } from './product-list-actions/product-list-actions.component';
 import { ProductFormComponent } from './product-form/product-form.component';
 
 
-// @ts-ignore
 @NgModule({
   declarations: [
     DashboardHeaderComponent,
     DashboardAppComponent,
     SidebarComponent,
+    EventListComponent,
+    EventFormComponent,
+    EditEventComponent,
+    EspaceListComponent,
+    AddEspaceComponent,
+    EspaceEditComponent,
     ProductListComponent,
     ProductListActionsComponent,
     ProductFormComponent
@@ -26,7 +38,12 @@ import { ProductFormComponent } from './product-form/product-form.component';
     CommonModule,
     SharedModule,
     DashboardRoutingModule,
-    Ng2SmartTableModule,
+    FormsModule,
+    ReactiveFormsModule,
+    Ng2SmartTableModule
+  ],
+  providers: [
+    DatePipe
   ]
 })
 export class DashboardModule { }

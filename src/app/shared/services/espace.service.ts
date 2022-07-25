@@ -14,8 +14,24 @@ export class EspaceService {
   getList(){
     return this.http.get<Espace[]>(this.url+"/all")
   }
+
+  getById(id: number){
+    return this.http.get<Espace>(this.url+"/getById/"+id)
+  }
   getCoord(){
     return this.http.get<any[]>(this.url+"/Coordinates")
+  }
+
+  add(espace:Espace){
+    return this.http.post(this.url+"/create", espace )
+  }
+  deleteEspace(id:number){
+    return this.http.delete(this.url+"/delete/"+id)
+  }
+
+  updateEspace(espace: Espace){
+    return this.http.post(this.url+"/update/"+espace._id, espace)
+
   }
 
 }
