@@ -13,6 +13,10 @@ import { EditEventComponent } from './edit-event/edit-event.component';
 import { EspaceListComponent } from './espace-list/espace-list.component';
 import { AddEspaceComponent } from './add-espace/add-espace.component';
 import { EspaceEditComponent } from './espace-edit/espace-edit.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { ProductListActionsComponent } from './product-list-actions/product-list-actions.component';
+import { ProductFormComponent } from './product-form/product-form.component';
 
 
 @NgModule({
@@ -25,14 +29,18 @@ import { EspaceEditComponent } from './espace-edit/espace-edit.component';
     EditEventComponent,
     EspaceListComponent,
     AddEspaceComponent,
-    EspaceEditComponent
+    EspaceEditComponent,
+    ProductListComponent,
+    ProductListActionsComponent,
+    ProductFormComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     DashboardRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2SmartTableModule
   ],
   providers: [
     DatePipe
