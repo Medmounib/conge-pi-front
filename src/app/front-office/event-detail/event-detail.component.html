@@ -10,9 +10,9 @@
             <div class="services__title">
               <h4><img src="assets/img/icons/services-icon.png" alt=""> Réserver votre place</h4>
             </div>
-            <form action="#">
-              <input type="text" placeholder="Nom">
-              <input type="text" placeholder="Téléphone">
+            <form [formGroup]="resForm" (ngSubmit)="onSubmit()">
+              <input type="text" placeholder="Nom" formControlName="name">
+              <input type="text" placeholder="Téléphone" formControlName="phone">
               <button type="submit" class="site-btn">Réserver maintenant</button>
             </form>
           </div>
