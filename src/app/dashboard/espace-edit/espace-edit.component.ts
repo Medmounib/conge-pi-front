@@ -4,7 +4,7 @@ import {CategoriesEspace} from "../../shared/model/categoriesEspace";
 import {EspaceService} from "../../shared/services/espace.service";
 import {FormControl, FormGroup} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
-import {categoriesEspaceService} from "../../shared/services/categoriesEspace.service";
+import {CategoriesEspaceService} from "../../shared/services/categoriesEspace.service";
 
 @Component({
   selector: 'app-espace-edit',
@@ -27,7 +27,7 @@ export class EspaceEditComponent implements OnInit {
   categorieList: CategoriesEspace[];
 
 
-  constructor(private espaceService:EspaceService, private router: ActivatedRoute,private categorieService: categoriesEspaceService, private rt: Router) { }
+  constructor(private espaceService:EspaceService, private router: ActivatedRoute,private categorieService: CategoriesEspaceService, private rt: Router) { }
 
   ngOnInit(): void {
 

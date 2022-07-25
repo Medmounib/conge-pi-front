@@ -1,8 +1,11 @@
-export class CategoriesEspace {
+import {Espace} from "./espace";
+
+export class AvisEspace {
   _id: number;
-  title   : String;
-  type : String;
-  description  : String;  espace :[];
-
-
+  text   : string;
+  who : string;
+  date : Date;
+  note : number;
+  description  : string;
+  espace:Espace;
 }

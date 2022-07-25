@@ -14,6 +14,9 @@ export class EspaceService {
   getList(){
     return this.http.get<Espace[]>(this.url+"/all")
   }
+  getListByCategory(idCategory: number){
+    return this.http.get<Espace[]>(this.url+"/all/"+idCategory)
+  }
 
   getById(id: number){
     return this.http.get<Espace>(this.url+"/getById/"+id)

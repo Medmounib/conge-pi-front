@@ -13,6 +13,9 @@ import {SharedModule} from "../shared/shared.module";
 import {FrontAppComponent} from './front-app/front-app.component';
 import {CommonModule} from "@angular/common";
 import {ProductCardComponent} from "./product-card/product-card.component";
+import { EspaceDetailComponent } from './espace-detail/espace-detail.component';
+import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
+import {FormsModule} from "@angular/forms";
 import { CalendarComponent } from './calendar/calendar.component';
 import {FullCalendarModule} from "@fullcalendar/angular";
 
@@ -29,12 +32,15 @@ import {FullCalendarModule} from "@fullcalendar/angular";
     EspaceListComponent,
     FrontAppComponent,
     ProductCardComponent,
+    EspaceDetailComponent,
     CalendarComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
+    FormsModule,
     FrontOfficeRoutingModule,
+    NgbRatingModule,
     FullCalendarModule
   ]
 })
