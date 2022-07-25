@@ -11,7 +11,7 @@
         <tbody>
           <tr *ngFor="let article of artList">
             <th scope="row">{{article._id}}</th>
-            <td>{{article.user}}</td>
+            <td>{{article.user._id}}</td>
             <td>{{article.title | slice:0:30}}...</td>
             <td><a [routerLink]="['/blog/article/',article._id]">Go</a></td>
           </tr>
