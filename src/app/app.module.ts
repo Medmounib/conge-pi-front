@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {FormsModule} from "@angular/forms";
@@ -12,7 +11,7 @@ import {AuthInterceptor} from "./shared/authentication/auth.interceptor";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,6 +19,7 @@ import {AuthInterceptor} from "./shared/authentication/auth.interceptor";
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
+    FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],

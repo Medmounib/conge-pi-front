@@ -18,6 +18,13 @@ import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
 import {FormsModule} from "@angular/forms";
 import { CalendarComponent } from './calendar/calendar.component';
 import {FullCalendarModule} from "@fullcalendar/angular";
+import { ArticlesListComponent } from './AppBlog/articles-list/articles-list.component';
+import { ArticleContainerComponent } from './AppBlog/article-container/article-container.component';
+import { ArticleFormComponent } from './AppBlog/article-form/article-form.component';
+import { ArticleDetComponent } from './AppBlog/article-det/article-det.component';
+import { NavComponent } from './AppBlog/nav/nav.component';
+import { MesArticlesComponent } from './AppBlog/mes-articles/mes-articles.component';
+import { ArtUpdateComponent } from './AppBlog/art-update/art-update.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import {LoginComponent} from "./sign-in/login/login.component";
 import {PasswordForgottenComponent} from "./sign-in/password-forgotten/password-forgotten.component";
@@ -40,6 +47,13 @@ import {ReactiveFormsModule} from "@angular/forms";
     ProductCardComponent,
     EspaceDetailComponent,
     CalendarComponent,
+    ArticlesListComponent,
+    ArticleContainerComponent,
+    ArticleFormComponent,
+    ArticleDetComponent,
+    NavComponent,
+    MesArticlesComponent,
+    ArtUpdateComponent,
     SignInComponent,
     LoginComponent,
     PasswordForgottenComponent,
