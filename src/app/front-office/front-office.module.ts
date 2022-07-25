@@ -18,6 +18,13 @@ import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
 import {FormsModule} from "@angular/forms";
 import { CalendarComponent } from './calendar/calendar.component';
 import {FullCalendarModule} from "@fullcalendar/angular";
+import { ArticlesListComponent } from './AppBlog/articles-list/articles-list.component';
+import { ArticleContainerComponent } from './AppBlog/article-container/article-container.component';
+import { ArticleFormComponent } from './AppBlog/article-form/article-form.component';
+import { ArticleDetComponent } from './AppBlog/article-det/article-det.component';
+import { NavComponent } from './AppBlog/nav/nav.component';
+import { MesArticlesComponent } from './AppBlog/mes-articles/mes-articles.component';
+import { ArtUpdateComponent } from './AppBlog/art-update/art-update.component';
 
 
 @NgModule({
@@ -33,7 +40,14 @@ import {FullCalendarModule} from "@fullcalendar/angular";
     FrontAppComponent,
     ProductCardComponent,
     EspaceDetailComponent,
-    CalendarComponent
+    CalendarComponent,
+    ArticlesListComponent,
+    ArticleContainerComponent,
+    ArticleFormComponent,
+    ArticleDetComponent,
+    NavComponent,
+    MesArticlesComponent,
+    ArtUpdateComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +55,8 @@ import {FullCalendarModule} from "@fullcalendar/angular";
     FormsModule,
     FrontOfficeRoutingModule,
     NgbRatingModule,
-    FullCalendarModule
+    FullCalendarModule,
+    FormsModule
   ]
 })
 export class FrontOfficeModule { }

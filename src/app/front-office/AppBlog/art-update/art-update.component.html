@@ -1,0 +1,19 @@
+<form #f="ngForm" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+    <label>Titre</label>
+    <input type="text" class="form-control" name="ref" value="{{art.title}}" #i="ngModel" [(ngModel)]="art.title">
+  </div>
+
+  <div class="form-group">
+    <label>Description</label>
+    <input type="text" class="form-control" name="title" value="{{art.descr}}" #f="ngModel" [(ngModel)]="art.descr">
+  </div>
+
+  <div class="form-group">
+    <label>Contenu</label>
+    <input type="text" class="form-control" name="content" value="{{art.content}}" #k="ngModel"
+      [(ngModel)]="art.content">
+  </div>
+
+  <button class="btn btn-success" (click)="update(art._id)">Update</button>
+</form>

@@ -1,0 +1,27 @@
+<div *ngIf="articles.length==0">
+    <div class="alert alert-primary" role="alert">
+        Vous n'avez aucun article ! 
+      </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let article of articles">
+
+            <div class="card mb-3">
+                <a [routerLink]="['/blog/article/',article._id]">
+                    <div class="card-body">
+                        <img src="assets/img/blog/download.png" alt="..." class="img-thumbnail">
+                        <h5 class="card-title">{{article.title}}</h5>
+                        <p class="card-text">{{article.descr}}</p>
+                        <small class="text-muted">{{article.content}}</small>
+                    </div>
+                </a>
+                <button type="button" class="btn btn-warning" style="width: 50%;"
+                    [routerLink]="['/blog/editarticle/',article._id]">Edit</button>
+                <button type="button" class="btn btn-danger" style="width: 50%;"
+                    (click)="deleteart(article._id)">Suppr</button>
+            </div>
+
+        </div>
+    </div>
+</div>

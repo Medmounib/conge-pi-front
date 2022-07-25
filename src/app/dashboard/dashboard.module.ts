@@ -19,6 +19,8 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ProductListActionsComponent } from './product-list-actions/product-list-actions.component';
 import { ProductFormComponent } from './product-form/product-form.component';
+import { BlogComponent } from './blog/blog.component';
+import { ReclamationComponent } from './reclamation/reclamation.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { ProductFormComponent } from './product-form/product-form.component';
     EspaceCategorieAddComponent,
     ProductListComponent,
     ProductListActionsComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    BlogComponent,
+    ReclamationComponent
   ],
   imports: [
     CommonModule,
