@@ -14,6 +14,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BlogComponent } from './blog/blog.component';
 import { DashboardAppComponent } from "./dashboard-app/dashboard-app.component";
 import { ReclamationComponent } from './reclamation/reclamation.component';
+import {EspaceCategorieEditComponent} from "./espace-categorie-edit/espace-categorie-edit.component";
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
       {path: 'espaces/edit/:id', component: EspaceEditComponent},
       {path: 'espaces/categorie', component: EspaceCategorieListComponent},
       {path: 'espaces/categorie/add', component: EspaceCategorieAddComponent},
+      {path: 'espaces/categorie/edit/:id', component: EspaceCategorieEditComponent},
       {path: 'product', component: ProductListComponent},
       {path: 'product/edit/:id', component: ProductListComponent},
       { path: 'articles', component: BlogComponent},

@@ -21,6 +21,7 @@ import { ProductListActionsComponent } from './product-list-actions/product-list
 import { ProductFormComponent } from './product-form/product-form.component';
 import { BlogComponent } from './blog/blog.component';
 import { ReclamationComponent } from './reclamation/reclamation.component';
+import { EspaceCategorieEditComponent } from './espace-categorie-edit/espace-categorie-edit.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { ReclamationComponent } from './reclamation/reclamation.component';
     ProductListActionsComponent,
     ProductFormComponent,
     BlogComponent,
-    ReclamationComponent
+    ReclamationComponent,
+    EspaceCategorieEditComponent
   ],
   imports: [
     CommonModule,
