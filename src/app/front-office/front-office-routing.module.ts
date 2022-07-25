@@ -13,6 +13,11 @@ import { ArticleFormComponent } from './AppBlog/article-form/article-form.compon
 import { ArticleDetComponent } from './AppBlog/article-det/article-det.component';
 import { MesArticlesComponent } from './AppBlog/mes-articles/mes-articles.component';
 import { ArtUpdateComponent } from './AppBlog/art-update/art-update.component';
+import {SignInComponent} from "./sign-in/sign-in.component";
+import {LoginComponent} from "./sign-in/login/login.component";
+import {RegisterComponent} from "./sign-in/register/register.component";
+import {PasswordForgottenComponent} from "./sign-in/password-forgotten/password-forgotten.component";
+import {ResetPasswordComponent} from "./sign-in/reset-password/reset-password.component";
 
 const routes: Routes = [
   {
@@ -31,6 +36,15 @@ const routes: Routes = [
       {path: 'blog/editarticle/:id', component: ArtUpdateComponent}
       
 
+    ]
+  },
+  {
+    path: 'auth', component: SignInComponent, children: [
+      {path: 'login', component: LoginComponent},
+      {path: 'register', component: RegisterComponent},
+      {path: 'password-forgotten', component: PasswordForgottenComponent},
+      {path: 'reset-password', component: ResetPasswordComponent},
+      {path: '**', redirectTo:'login'}
     ]
   }
 ];

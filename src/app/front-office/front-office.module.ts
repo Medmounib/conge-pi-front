@@ -25,6 +25,12 @@ import { ArticleDetComponent } from './AppBlog/article-det/article-det.component
 import { NavComponent } from './AppBlog/nav/nav.component';
 import { MesArticlesComponent } from './AppBlog/mes-articles/mes-articles.component';
 import { ArtUpdateComponent } from './AppBlog/art-update/art-update.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import {LoginComponent} from "./sign-in/login/login.component";
+import {PasswordForgottenComponent} from "./sign-in/password-forgotten/password-forgotten.component";
+import {RegisterComponent} from "./sign-in/register/register.component";
+import {ResetPasswordComponent} from "./sign-in/reset-password/reset-password.component";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -47,7 +53,12 @@ import { ArtUpdateComponent } from './AppBlog/art-update/art-update.component';
     ArticleDetComponent,
     NavComponent,
     MesArticlesComponent,
-    ArtUpdateComponent
+    ArtUpdateComponent,
+    SignInComponent,
+    LoginComponent,
+    PasswordForgottenComponent,
+    RegisterComponent,
+    ResetPasswordComponent
   ],
   imports: [
     CommonModule,
@@ -56,7 +67,7 @@ import { ArtUpdateComponent } from './AppBlog/art-update/art-update.component';
     FrontOfficeRoutingModule,
     NgbRatingModule,
     FullCalendarModule,
-    FormsModule
+    ReactiveFormsModule
   ]
 })
 export class FrontOfficeModule { }

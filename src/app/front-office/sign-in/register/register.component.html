@@ -1,0 +1,89 @@
+<div class="row" data-aos="zoom-in" data-aos-duration="250" data-aos-easing="ease-in-out">
+  <div class="col-sm-12">
+
+    <h3 class="form-title"><img alt="image missing..." class="register-illustration"
+                                src="assets/img/illustrations/form/profile_data.svg"> Sign up</h3>
+
+    <div class="alert alert-danger alert-dismissible fade show" *ngIf="errorMessage">
+      <button type="button" (click)="errorMessage=null" class="close" data-dismiss="alert">&times;</button>
+      <strong>Error!</strong> {{errorMessage}}.
+    </div>
+
+    <form [formGroup]="form" class="join-us-form" (ngSubmit)="onSubmit()">
+
+      <div class="form-row">
+
+        <div class="col-sm-6 form-group">
+          <input class="form-control" formControlName="name" id="name" name="name"
+                 placeholder="Your Full Name" type="text" autocomplete="off"/>
+
+          <small *ngIf="form.get('name').invalid && form.get('name').touched" class="form-text text-danger">
+            <i class="icofont-warning-alt"></i>
+            Please enter your full name
+          </small>
+
+        </div> <!-- Name -->
+
+        <div class="col-sm-6 form-group">
+          <input class="form-control" formControlName="address" id="address" name="address"
+                 placeholder="Your address" type="text"/>
+
+          <small *ngIf="form.get('address').invalid && form.get('address').touched" class="form-text text-danger">
+            <i class="icofont-warning-alt"></i>
+            Please enter your address
+          </small>
+        </div> <!-- Client ID -->
+
+        <div class="col-sm-6 form-group">
+          <input class="form-control" formControlName="email" id="email" name="email"
+                 placeholder="Your E-mail"
+                 type="email"/>
+
+          <small *ngIf="form.get('email').invalid && form.get('email').touched" class="form-text text-danger">
+            <i class="icofont-warning-alt"></i>
+            Please enter a valid email
+          </small>
+
+        </div> <!-- Email -->
+
+        <div class="col-sm-6 form-group">
+          <select class="form-control" formControlName="country" id="country">
+            <option value="" selected disabled>Select your country</option>
+            <option *ngFor="let country of countries" value="{{country}}">{{country}}</option>
+          </select>
+
+          <small *ngIf="form.get('country').invalid && form.get('country').touched" class="form-text text-danger">
+            <i class="icofont-warning-alt"></i>
+            Please select your country
+          </small>
+
+        </div> <!-- Country -->
+
+        <div class="col-sm-6 form-group">
+          <input class="form-control" formControlName="password" id="password" name="password"
+                 placeholder="New Password" type="password"/>
+
+          <small *ngIf="form.get('password').invalid && form.get('password').touched" class="form-text text-danger">
+            <i class="icofont-warning-alt"></i>
+            Password must be 8 characters at least
+          </small>
+
+        </div> <!-- Password -->
+
+        <div class="col-sm-6">
+          <h6 class="text-secondary text-right">
+            <br><B>Already a member ? </B><a [routerLink]="'/auth/login'">Sign in</a>
+          </h6>
+        </div>
+
+      </div>
+      <br>
+
+      <div class="text-center">
+        <button type="submit" [disabled]="form.invalid"><app-loader *ngIf="isLoading"></app-loader> <i *ngIf="!isLoading" class="icofont-login"></i> Sign up</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>

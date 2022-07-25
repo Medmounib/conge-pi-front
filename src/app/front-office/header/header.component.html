@@ -15,13 +15,18 @@
 
               <li><a routerLink="/store">Store</a></li>
               <li><a routerLink="/espaces">Espaces</a></li>
-              <li><a routerLink="/blog">Articles</a></li>
+              <li><a routerLink="/blog">Blog</a></li>
+              <li *ngIf="!isUserLogged">
+                <a routerLinkActive="active" routerLink="/auth/login">Login</a>
+              </li>
+              <li *ngIf="isUserLogged"><a href="#" class="text-dark">{{loggedUserName}}</a>
+                <ul class="dropdown">
+                  <li><a (click)="authService.logOut()" class="logout-button">logout</a></li>
+                </ul>
+              </li>
 
             </ul>
           </nav>
-          <div class="header__btn">
-            <a href="#" class="primary-btn">Appointment</a>
-          </div>
         </div>
       </div>
     </div>
