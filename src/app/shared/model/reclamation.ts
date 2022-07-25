@@ -1,6 +1,9 @@
+import { User } from "./user";
+
 export class Reclamation {
-    _id: number;
-    content : String;
-    date: Date;
+    _id: string;
+    descr : string;
+    user: User;
+    treated: Boolean;
   }
   

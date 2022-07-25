@@ -1,5 +1,7 @@
-<div class="container">
+<div class="container" style="width: 50%;">
+  <br>
   <button type="button" class="btn btn-primary btn-lg btn-block" (click)="ser()">Ajouter un article</button>
+  <br>
   <div [hidden]="hide">
     <form #f="ngForm" method="post" enctype="multipart/form-data">
       <div class="form-group">
@@ -33,7 +35,9 @@
           <label class="custom-file-label" for="inputGroupFile01">Choose picture</label>
         </div>
       </div>
+      <br>
       <button class="btn btn-success" (click)="submit()">Ajouter</button>
     </form>
   </div>
 </div>
+<br>

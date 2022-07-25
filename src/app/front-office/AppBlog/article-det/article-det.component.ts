@@ -42,9 +42,8 @@ export class ArticleDetComponent implements OnInit {
   addComment() {
     const routeParams = this.route.snapshot.paramMap;
     const productIdFromRoute = String(routeParams.get('id'));
-    this.cmntser.postComment(this.mycmnt, productIdFromRoute).subscribe(
-      () => this.commentList = [this.mycmnt, ...this.commentList]
-    );
+    this.cmntser.postComment(this.mycmnt, productIdFromRoute).subscribe();
+    window.location.reload();
     this.mycmnt = new Comment();
   }
 
