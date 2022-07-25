@@ -8,6 +8,8 @@ import {EspaceListComponent} from "./espace-list/espace-list.component";
 import {AddEspaceComponent} from "./add-espace/add-espace.component";
 import {EspaceEditComponent} from "./espace-edit/espace-edit.component";
 import {ProductListComponent} from "./product-list/product-list.component";
+import {ProductFormComponent} from "./product-form/product-form.component";
+import {ProductCategoryListComponent} from "./product-category-list/product-category-list.component";
 
 
 const routes: Routes = [
@@ -19,8 +21,10 @@ const routes: Routes = [
       {path: 'espaces', component: EspaceListComponent},
       {path: 'espaces/add', component: AddEspaceComponent},
       {path: 'espaces/edit/:id', component: EspaceEditComponent},
-      {path: 'product', component: ProductListComponent},
-      {path: 'product/edit/:id', component: ProductListComponent},
+      {path: 'produit', component: ProductListComponent},
+      {path: 'produit/ajouter', component: ProductFormComponent},
+      {path: 'produit/modifier/:id', component: ProductFormComponent},
+      {path: 'categorie-produit', component: ProductCategoryListComponent},
 
     ]
   }

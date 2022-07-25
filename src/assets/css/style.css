@@ -2853,3 +2853,7 @@ ol {
 		padding: 14px 30px 12px;
 	}
 }
+
+.element-max-width {
+  max-width: 20em;
+}
