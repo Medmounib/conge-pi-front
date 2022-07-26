@@ -84,7 +84,7 @@ export class EspaceDetailComponent implements OnInit {
   save(){
     this.avis.espace = this.espace;
     this.avisEspaceService.add(this.avis).subscribe();
-    // this.router;
+    window.location.reload();
 
   }
 
