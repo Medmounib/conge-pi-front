@@ -5,6 +5,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {} from 'googlemaps';
 import {AvisEspace} from "../../shared/model/avisEspace";
 import {avisEspaceService} from "../../shared/services/avisEspace.service";
+import {ReservationService} from "../../shared/services/reservation.service";
+import {FormBuilder} from "@angular/forms";
 
 @Component({
   selector: 'app-espace-detail',
@@ -20,11 +22,21 @@ export class EspaceDetailComponent implements OnInit {
   espace: Espace;
   avisEspaces: AvisEspace[];
   avis: AvisEspace;
-
+  resForm = this.formBuilder.group({
+    name: '',
+    phone: '',
+    date: '',
+    timeStart: '',
+    timeEnd: '',
+    id: this.route.snapshot.params['id']
+  });
   constructor( private espaceService: EspaceService,
                private route: ActivatedRoute,
                private avisEspaceService : avisEspaceService,
-               private router : Router) {
+               private router : Router,
+               private reservService : ReservationService,
+               private formBuilder : FormBuilder,
+               ) {
     this.espaceService.getById(this.route.snapshot.params['id']).subscribe(
       (result) => {
         this.espace = result;
@@ -75,4 +87,10 @@ export class EspaceDetailComponent implements OnInit {
     // this.router;
 
   }
+
+  onSubmit(){
+    this.reservService.reserveEspace( this.resForm.value).subscribe();
+    this.router.navigate(['/espaces'])
+  }
+
 }
