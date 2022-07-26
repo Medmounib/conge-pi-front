@@ -1,6 +1,8 @@
-<h1>Events</h1>
 <div class="container">
-  <app-event-card *ngFor="let event of eventList"
-   [event]="event">
-  </app-event-card>
+  <h1>Evenements</h1>
+  <div class="row">
+    <app-event-card class="col-lg-4" *ngFor="let event of eventList"
+                       [event]="event">
+    </app-event-card>
+  </div>
 </div>
