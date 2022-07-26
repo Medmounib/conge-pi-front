@@ -8,4 +8,5 @@ export class Product {
   dateUpdate: any;
   user : any;
   category: any;
+  image: string;
 }

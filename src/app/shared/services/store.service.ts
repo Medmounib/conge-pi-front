@@ -13,6 +13,9 @@ export class StoreService {
   public getAllProducts() {
     return this.http.get<Product[]>(`${this.url}/product/all`);
   }
+  public getActifProducts() {
+    return this.http.get<Product[]>(`${this.url}/product/allActif`);
+  }
 
   public getProductById(id: string) {
     return this.http.get<Product>(`${this.url}/product/`+id);
@@ -54,5 +57,11 @@ export class StoreService {
     return this.http.get<ProductCategory[]>(`${this.url}/productCategory/delete/`+id);
   }
 
+  makePayment(stripeToken: any, total: number, productList: any): Observable<any>{
+    stripeToken['total'] = total;
+    stripeToken['productList'] = productList;
+    console.log(productList);
+    return this.http.post<any>(`${this.url}/product/checkout`,{token:stripeToken})
+  }
 
 }

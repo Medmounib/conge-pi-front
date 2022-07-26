@@ -1,3 +1,4 @@
+<app-cart></app-cart>
 <div class="row ml-5">
   <div class="col-3">
     <div class="py-5">
@@ -9,13 +10,11 @@
           <div class="card-body">
             <div class="form-check" *ngFor="let category of productCategories">
               <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" [value]="category._id" (click)="handleCategoryCheckBox(category._id)">
+                <input type="checkbox" class="form-check-input" [value]="category._id"
+                       (click)="handleCategoryCheckBox(category._id)">
                 {{ category.name }}
               </label>
             </div>
-<!--            <span class="text-muted text-decoration-line-through" *ngFor="let category of productCategories">-->
-<!--              {{ category.name }}<br>-->
-<!--            </span>-->
           </div>
         </div>
       </div>
@@ -24,8 +23,8 @@
   <div class="col-9">
     <section class="py-5">
       <div class="container px-4 px-lg-5 mt-5">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-          <div *ngFor="let product of products">
+        <div class="row">
+          <div *ngFor="let product of products" class="col-4">
             <product-card [product]="product"></product-card>
           </div>
         </div>

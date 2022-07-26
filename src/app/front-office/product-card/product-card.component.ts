@@ -16,7 +16,6 @@ export class ProductCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.checkCart();
-
   }
 
   checkCart() {
@@ -42,7 +41,7 @@ export class ProductCardComponent implements OnInit {
       }
     }
     localStorage.setItem('cart', JSON.stringify(itemsInCart));
-    this.disabledButton == true;
+    this.checkCart();
   }
 
 }
