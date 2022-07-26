@@ -43,7 +43,8 @@ import { ProductCategoryListComponent } from './product-category-list/product-ca
     ProductFormComponent,
     BlogComponent,
     ReclamationComponent,
-    EspaceCategorieEditComponent
+    EspaceCategorieEditComponent,
+    ProductCategoryListComponent
   ],
   imports: [
     CommonModule,

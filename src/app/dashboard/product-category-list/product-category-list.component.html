@@ -1,10 +1,7 @@
 <div class="col-md-12 col-sm-12  ">
   <div class="card">
     <div class="card-header d-flex justify-content-between">
-      <h2>Liste des événements</h2>
-      <button class="btn btn-success">
-        <a routerLink="/back-office/produit/ajouter"><span class="text-white">Ajouter</span></a>
-      </button>
+      <h2>Liste des categories produits</h2>
     </div>
     <div class="x_content">
       <ng2-smart-table [settings]="settings" [source]="categories" (createConfirm)="onCreateConfirm($event)" (deleteConfirm)="onDeleteConfirm($event)" (editConfirm)="onSaveConfirm($event)"></ng2-smart-table>
