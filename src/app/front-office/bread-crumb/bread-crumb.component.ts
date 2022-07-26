@@ -6,7 +6,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./bread-crumb.component.css']
 })
 export class BreadCrumbComponent implements OnInit {
-  breadCrumbTitle: string = "Title";
+  breadCrumbTitle: string = "HealStack";
   constructor() { }
 
   ngOnInit(): void {

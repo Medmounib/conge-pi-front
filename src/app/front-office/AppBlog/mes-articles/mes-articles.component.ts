@@ -14,12 +14,9 @@ export class MesArticlesComponent implements OnInit {
 
   ngOnInit(): void {
     this.blogservice.getmyList().subscribe(
-      (data: Article[]) => {
-        if(data){
-          this.articles = data;
-        }
-        else { this.hide=false}
-      }
+      (data: Article[]) => 
+          this.articles = data
+       
    );
   }
   deleteart(id: String){

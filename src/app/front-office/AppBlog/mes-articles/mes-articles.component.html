@@ -16,10 +16,13 @@
                         <small class="text-muted">{{article.content}}</small>
                     </div>
                 </a>
-                <button type="button" class="btn btn-warning" style="width: 50%;"
+               
+                    <button type="button" class="btn btn-warning" style="width: 50%;"
                     [routerLink]="['/blog/editarticle/',article._id]">Edit</button>
                 <button type="button" class="btn btn-danger" style="width: 50%;"
                     (click)="deleteart(article._id)">Suppr</button>
+                
+                
             </div>
 
         </div>
