@@ -1,4 +1,3 @@
-
 import {EventListComponent} from "./event-list/event-list.component";
 import {EventFormComponent} from "./event-form/event-form.component";
 import {EditEventComponent} from './edit-event/edit-event.component';
@@ -10,15 +9,12 @@ import {EspaceCategorieAddComponent} from "./espace-categorie-add/espace-categor
 import {ProductListComponent} from "./product-list/product-list.component";
 import {ProductFormComponent} from "./product-form/product-form.component";
 import {ProductCategoryListComponent} from "./product-category-list/product-category-list.component";
-import { BlogComponent } from './blog/blog.component';
-import { ReclamationComponent } from './reclamation/reclamation.component';
+import {BlogComponent} from './blog/blog.component';
+import {ReclamationComponent} from './reclamation/reclamation.component';
 import {EspaceCategorieEditComponent} from "./espace-categorie-edit/espace-categorie-edit.component";
-
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {BlogComponent} from './blog/blog.component';
 import {DashboardAppComponent} from "./dashboard-app/dashboard-app.component";
-import {ReclamationComponent} from './reclamation/reclamation.component';
 import {LoginAdminComponent} from "./login-admin/login-admin.component";
 
 const routes: Routes = [
@@ -36,19 +32,16 @@ const routes: Routes = [
       {path: 'product/edit/:id', component: ProductListComponent},
       {path: 'articles', component: BlogComponent},
       {path: 'reclamations', component: ReclamationComponent},
-    ],
-  },
-  {path: 'login', component: LoginAdminComponent}
-
       {path: 'espaces/categorie/edit/:id', component: EspaceCategorieEditComponent},
       {path: 'produit', component: ProductListComponent},
       {path: 'produit/ajouter', component: ProductFormComponent},
       {path: 'produit/modifier/:id', component: ProductFormComponent},
       {path: 'categorie-produit', component: ProductCategoryListComponent},
-      { path: 'articles', component: BlogComponent},
-      { path: 'reclamations', component: ReclamationComponent},
-    ]
-  }
+      {path: 'articles', component: BlogComponent},
+      {path: 'reclamations', component: ReclamationComponent}
+    ],
+  },
+  {path: 'login', component: LoginAdminComponent}
 ];
 
 @NgModule({

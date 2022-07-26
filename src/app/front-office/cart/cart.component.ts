@@ -3,7 +3,6 @@ import {Product} from "../../shared/model/product";
 import {HttpErrorResponse} from "@angular/common/http";
 import {StoreService} from "../../shared/services/store.service";
 import {environment} from "../../../environments/environment";
-import {Stripe} from "@stripe/stripe-js";
 
 @Component({
   selector: 'app-cart',
