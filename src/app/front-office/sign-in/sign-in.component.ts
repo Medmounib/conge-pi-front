@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from "../../shared/authentication/auth.service";
 
 @Component({
   selector: 'app-sign-in',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService:AuthService) { }
 
   ngOnInit() {
+    const user = this.authService.getConnectedUserSubject().getValue();
+    if (user){
+      this.authService.redirectToHome();
+    }
   }
 
 }
