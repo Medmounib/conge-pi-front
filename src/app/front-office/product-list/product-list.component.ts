@@ -12,8 +12,10 @@ import {ProductCategory} from "../../shared/model/productCategory";
 export class ProductListComponent implements OnInit {
 
   products: Product[];
+  temp: Product[];
   productCategories: ProductCategory[];
   selectedCategories: any[] = [];
+
 
 
   constructor(private storeService: StoreService) {
@@ -28,6 +30,7 @@ export class ProductListComponent implements OnInit {
     this.storeService.getActifProducts().subscribe(
       (response: Product[]) => {
         this.products = response;
+        this.temp = response;
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
@@ -57,6 +60,11 @@ export class ProductListComponent implements OnInit {
         }
       })
     }
+    let that = this;
+    this.products = this.temp;
+    this.selectedCategories.forEach(function (element) {
+       that.products = that.products.filter(p => p.category == element)
+    })
   }
 
 }
