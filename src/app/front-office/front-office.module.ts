@@ -32,7 +32,11 @@ import {RegisterComponent} from "./sign-in/register/register.component";
 import {ResetPasswordComponent} from "./sign-in/reset-password/reset-password.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import { CartComponent } from './cart/cart.component';
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
 
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+]);
 
 @NgModule({
   declarations: [
