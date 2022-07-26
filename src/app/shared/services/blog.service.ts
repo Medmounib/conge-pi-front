@@ -13,7 +13,7 @@ export class BlogService {
     return this.http.get<Article[]>(this.url);
   }
   getmyList(){
-    return this.http.get<Article[]>(this.url+"/mesarticles");
+    return this.http.get<Article[]>(this.url+"/mesarticles/1");
   }
   create(s: Article){
     return this.http.post(this.url,s);
