@@ -13,9 +13,12 @@ export class StoreService {
   public getAllProducts() {
     return this.http.get<Product[]>(`${this.url}/product/all`);
   }
+  public getActifProducts() {
+    return this.http.get<Product[]>(`${this.url}/product/allActif`);
+  }
 
   public getProductById(id: string) {
-    return this.http.get<Product[]>(`${this.url}/product/`+id);
+    return this.http.get<Product>(`${this.url}/product/`+id);
   }
 
   public getProductsByUser(id: string) {
@@ -23,11 +26,11 @@ export class StoreService {
   }
 
   public addProduct(product: Product) {
-    return this.http.post<Product[]>(`${this.url}/product/add`, product);
+    return this.http.post<Product>(`${this.url}/product/add`, product);
   }
 
   public editProduct(product: Product) {
-    return this.http.post<Product[]>(`${this.url}/product/update/`+product._id, product);
+    return this.http.post<Product>(`${this.url}/product/update/`+product._id, product);
   }
 
   public deleteProduct(id: string) {
@@ -39,16 +42,26 @@ export class StoreService {
   }
 
   public getProductCategoryById(id: string) {
-    return this.http.get<Product[]>(`${this.url}/productCategory/`+id);
+    return this.http.get<ProductCategory>(`${this.url}/productCategory/`+id);
   }
 
   public addProductCategory(productCategory: ProductCategory) {
-    return this.http.post<Product[]>(`${this.url}/productCategory/add`, productCategory);
+    return this.http.post<ProductCategory>(`${this.url}/productCategory/add`, productCategory);
   }
 
   public editProductCategory(productCategory: ProductCategory) {
-    return this.http.post<Product[]>(`${this.url}/productCategory/update/`+productCategory._id, productCategory);
+    return this.http.post<ProductCategory>(`${this.url}/productCategory/update/`+productCategory._id, productCategory);
   }
 
+  public deleteProductCategory(id: string) {
+    return this.http.get<ProductCategory[]>(`${this.url}/productCategory/delete/`+id);
+  }
+
+  makePayment(stripeToken: any, total: number, productList: any): Observable<any>{
+    stripeToken['total'] = total;
+    stripeToken['productList'] = productList;
+    console.log(productList);
+    return this.http.post<any>(`${this.url}/product/checkout`,{token:stripeToken})
+  }
 
 }

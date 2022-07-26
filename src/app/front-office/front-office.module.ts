@@ -31,6 +31,7 @@ import {PasswordForgottenComponent} from "./sign-in/password-forgotten/password-
 import {RegisterComponent} from "./sign-in/register/register.component";
 import {ResetPasswordComponent} from "./sign-in/reset-password/reset-password.component";
 import {ReactiveFormsModule} from "@angular/forms";
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     LoginComponent,
     PasswordForgottenComponent,
     RegisterComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    CartComponent
   ],
   imports: [
     CommonModule,

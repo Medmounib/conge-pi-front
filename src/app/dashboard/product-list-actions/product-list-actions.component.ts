@@ -23,7 +23,7 @@ export class ProductListActionsComponent implements OnInit, ViewCell {
   }
 
   editProduct() {
-    this.router.navigate(['/back-office/product/edit', this.rowData._id])
+    this.router.navigate(['/back-office/produit/modifier', this.rowData._id])
   }
 
   deleteProduct() {

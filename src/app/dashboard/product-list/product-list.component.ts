@@ -17,9 +17,8 @@ export class ProductListComponent implements OnInit {
   settings = {
     attr: {
       class: 'table table-bordered',
-      hideSubHeader: true,
-      hideHeader: true
     },
+    hideSubHeader: true,
     actions: false,
     columns: {
       title: {
@@ -28,7 +27,11 @@ export class ProductListComponent implements OnInit {
       },
       description: {
         title: 'Description',
-        filter: false
+        filter: false,
+        type: 'html',
+        valuePrepareFunction: (cell: any) => {
+          return '<span class="d-inline-block text-truncate element-max-width">'+cell+'</span>';
+        }
       },
       dateCreation: {
         title: 'Date de creation',
