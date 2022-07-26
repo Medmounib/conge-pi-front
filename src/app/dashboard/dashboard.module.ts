@@ -22,6 +22,8 @@ import { ProductFormComponent } from './product-form/product-form.component';
 import { BlogComponent } from './blog/blog.component';
 import { ReclamationComponent } from './reclamation/reclamation.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
+import { EspaceCategorieEditComponent } from './espace-categorie-edit/espace-categorie-edit.component';
+import { ProductCategoryListComponent } from './product-category-list/product-category-list.component';
 
 
 @NgModule({
@@ -42,7 +44,10 @@ import { LoginAdminComponent } from './login-admin/login-admin.component';
     ProductFormComponent,
     BlogComponent,
     ReclamationComponent,
-    LoginAdminComponent
+    LoginAdminComponent,
+    ReclamationComponent,
+    EspaceCategorieEditComponent,
+    ProductCategoryListComponent
   ],
   imports: [
     CommonModule,

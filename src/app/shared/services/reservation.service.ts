@@ -9,13 +9,21 @@ import {HttpClient} from "@angular/common/http";
 })
 
 export class ReservationService {
-  url: string = "http://localhost:3000/reservation/";
+  url: string = "http://localhost:3000/reservation";
 
   constructor(private http: HttpClient) {}
 
   //get all events list
   getList(){
     return this.http.get<Reservation[]>(this.url+"/all")
+  }
+
+  reserveEvent(data: {}){
+    return this.http.post(this.url+"/reserveEvent", data)
+  }
+
+  reserveEspace(data: {}){
+    return this.http.post(this.url+"/reserveEspace", data)
   }
 
   getUserReservations(){

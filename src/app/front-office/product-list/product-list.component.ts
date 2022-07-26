@@ -15,16 +15,17 @@ export class ProductListComponent implements OnInit {
   productCategories: ProductCategory[];
   selectedCategories: any[] = [];
 
+
   constructor(private storeService: StoreService) {
   }
 
   ngOnInit(): void {
     this.getAllProducts();
-    this.getAllCategories()
+    this.getAllCategories();
   }
 
   getAllProducts() {
-    this.storeService.getAllProducts().subscribe(
+    this.storeService.getActifProducts().subscribe(
       (response: Product[]) => {
         this.products = response;
       },
@@ -38,7 +39,6 @@ export class ProductListComponent implements OnInit {
     this.storeService.getAllCategories().subscribe(
       (response: ProductCategory[]) => {
         this.productCategories = response;
-        console.log(this.productCategories)
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
@@ -52,7 +52,7 @@ export class ProductListComponent implements OnInit {
     } else {
       let that = this;
       this.selectedCategories.forEach(function (value, key) {
-          if (value == id) {
+        if (value == id) {
           that.selectedCategories.splice(key, 1);
         }
       })

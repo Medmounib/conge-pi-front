@@ -4,8 +4,9 @@ export class Product {
   description: string;
   price: number;
   inStock: boolean;
-  dateCreation: Date;
-  dateUpdate: Date;
+  dateCreation: any;
+  dateUpdate: any;
   user : any;
   category: any;
+  image: string;
 }
