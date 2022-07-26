@@ -7,10 +7,14 @@ import { EditEventComponent } from './edit-event/edit-event.component';
 import {EspaceListComponent} from "./espace-list/espace-list.component";
 import {AddEspaceComponent} from "./add-espace/add-espace.component";
 import {EspaceEditComponent} from "./espace-edit/espace-edit.component";
+import {EspaceCategorieListComponent} from "./espace-categorie-list/espace-categorie-list.component";
+import {EspaceCategorieAddComponent} from "./espace-categorie-add/espace-categorie-add.component";
 import {ProductListComponent} from "./product-list/product-list.component";
 import {ProductFormComponent} from "./product-form/product-form.component";
 import {ProductCategoryListComponent} from "./product-category-list/product-category-list.component";
-
+import { BlogComponent } from './blog/blog.component';
+import { ReclamationComponent } from './reclamation/reclamation.component';
+import {EspaceCategorieEditComponent} from "./espace-categorie-edit/espace-categorie-edit.component";
 
 const routes: Routes = [
   {
@@ -21,11 +25,15 @@ const routes: Routes = [
       {path: 'espaces', component: EspaceListComponent},
       {path: 'espaces/add', component: AddEspaceComponent},
       {path: 'espaces/edit/:id', component: EspaceEditComponent},
+      {path: 'espaces/categorie', component: EspaceCategorieListComponent},
+      {path: 'espaces/categorie/add', component: EspaceCategorieAddComponent},
+      {path: 'espaces/categorie/edit/:id', component: EspaceCategorieEditComponent},
       {path: 'produit', component: ProductListComponent},
       {path: 'produit/ajouter', component: ProductFormComponent},
       {path: 'produit/modifier/:id', component: ProductFormComponent},
       {path: 'categorie-produit', component: ProductCategoryListComponent},
-
+      { path: 'articles', component: BlogComponent},
+      { path: 'reclamations', component: ReclamationComponent},
     ]
   }
 ];

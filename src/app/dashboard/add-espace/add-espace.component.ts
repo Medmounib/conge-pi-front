@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Espace} from "../../shared/model/espace";
 import {EspaceService} from "../../shared/services/espace.service";
 import {Router} from "@angular/router";
-import {categoriesEspaceService} from "../../shared/services/categoriesEspace.service";
 import {CategoriesEspace} from "../../shared/model/categoriesEspace";
+import {CategoriesEspaceService} from "../../shared/services/categoriesEspace.service";
 
 @Component({
   selector: 'app-add-espace',
@@ -14,7 +14,7 @@ export class AddEspaceComponent implements OnInit {
   espace: Espace;
   categorieList: CategoriesEspace[];
 
-  constructor(private espaceService:EspaceService,private categorieService: categoriesEspaceService, private router : Router) { }
+  constructor(private espaceService:EspaceService,private categorieService: CategoriesEspaceService, private router : Router) { }
 
   ngOnInit(): void {
     this.espace= new Espace();

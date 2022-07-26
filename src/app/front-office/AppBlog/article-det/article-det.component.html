@@ -1,0 +1,34 @@
+<div class="container" *ngIf="art">
+  <div class="card-body">
+    <h5 class="card-title">{{art.title}}</h5>
+    <p class="card-text">{{art.descr}}</p>
+    <p class="card-text"><small class="text-muted">{{art.content}}</small></p>
+  </div>
+  <ul class="list-group">
+  <div *ngFor="let comment of commentList">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{comment.content}}
+        <span class="badge badge-primary badge-pill">{{ comment.date | date:'short' }}</span>
+      </li>
+  </div>
+</ul>
+
+
+<div class="form-group">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="add comment"
+     aria-label="add comment" aria-describedby="basic-addon2" 
+     required #n="ngModel" [(ngModel)]="mycmnt.content">
+    <div class="input-group-append">
+      <button class="btn btn-success" type="button" (click)="addComment()">add</button>
+    </div>
+    
+  </div>
+  
+  
+</div>
+
+
+
+
+</div>

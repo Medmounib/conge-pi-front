@@ -13,10 +13,15 @@ import { EditEventComponent } from './edit-event/edit-event.component';
 import { EspaceListComponent } from './espace-list/espace-list.component';
 import { AddEspaceComponent } from './add-espace/add-espace.component';
 import { EspaceEditComponent } from './espace-edit/espace-edit.component';
+import { EspaceCategorieListComponent } from './espace-categorie-list/espace-categorie-list.component';
+import { EspaceCategorieAddComponent } from './espace-categorie-add/espace-categorie-add.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ProductListActionsComponent } from './product-list-actions/product-list-actions.component';
 import { ProductFormComponent } from './product-form/product-form.component';
+import { BlogComponent } from './blog/blog.component';
+import { ReclamationComponent } from './reclamation/reclamation.component';
+import { EspaceCategorieEditComponent } from './espace-categorie-edit/espace-categorie-edit.component';
 import { ProductCategoryListComponent } from './product-category-list/product-category-list.component';
 
 
@@ -31,10 +36,14 @@ import { ProductCategoryListComponent } from './product-category-list/product-ca
     EspaceListComponent,
     AddEspaceComponent,
     EspaceEditComponent,
+    EspaceCategorieListComponent,
+    EspaceCategorieAddComponent,
     ProductListComponent,
     ProductListActionsComponent,
     ProductFormComponent,
-    ProductCategoryListComponent
+    BlogComponent,
+    ReclamationComponent,
+    EspaceCategorieEditComponent
   ],
   imports: [
     CommonModule,

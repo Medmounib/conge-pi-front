@@ -1,0 +1,11 @@
+ngb-rating {
+  color: #FFC107;
+  font-size: 20px;
+}
+ngb-rating span.visually-hidden {
+  display: none !important;
+}
+.consultation__form {
+  margin-top: 0px !important;
+}
+

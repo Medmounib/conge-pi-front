@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Espace} from "../../shared/model/espace";
 import {EspaceService} from "../../shared/services/espace.service";
-import {Event} from "../../shared/model/event";
 import {Router} from "@angular/router";
-import {CategoriesEspace} from "../../shared/model/categoriesEspace";
-import {categoriesEspaceService} from "../../shared/services/categoriesEspace.service";
 
 @Component({
   selector: 'app-espace-list',

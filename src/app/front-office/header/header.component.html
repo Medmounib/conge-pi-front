@@ -10,17 +10,22 @@
         <div class="header__menu__option">
           <nav class="header__menu">
             <ul>
-              <li class=""><a href="../../../index.html">Home</a></li>
-              <li class="active"><a href="/evenements">Evenements</a></li>
-
-              <li><a routerLink="/store">Store</a></li>
-              <li><a routerLink="/espaces">Espaces</a></li>
+              <li><a routerLink="/blog">Blog</a></li>
+              <li routerLinkActive="active"><a routerLink="/">Home</a></li>
+              <li routerLinkActive="active"><a routerLink="/evenements">Evenements</a></li>
+              <li routerLinkActive="active"><a routerLink="/store">Store</a></li>
+              <li routerLinkActive="active"><a routerLink="/espaces">Espaces</a></li>
+              <li *ngIf="!isUserLogged">
+                <a routerLinkActive="active" routerLink="/auth/login">Login</a>
+              </li>
+              <li *ngIf="isUserLogged"><a href="#" class="text-dark">{{loggedUserName}}</a>
+                <ul class="dropdown">
+                  <li><a (click)="authService.logOut()" class="logout-button">logout</a></li>
+                </ul>
+              </li>
 
             </ul>
           </nav>
-          <div class="header__btn">
-            <a href="#" class="primary-btn">Appointment</a>
-          </div>
         </div>
       </div>
     </div>

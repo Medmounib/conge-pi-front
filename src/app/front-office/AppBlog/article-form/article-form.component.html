@@ -1,0 +1,43 @@
+<div class="container" style="width: 50%;">
+  <br>
+  <button type="button" class="btn btn-primary btn-lg btn-block" (click)="ser()">Ajouter un article</button>
+  <br>
+  <div [hidden]="hide">
+    <form #f="ngForm" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label>Titre</label>
+        <input type="text" class="form-control" name="ref" required #i="ngModel" [(ngModel)]="art.title">
+      </div>
+      <div class="alert alert-danger" *ngIf="i.invalid && i.touched">
+        <div *ngIf="i.errors">required field</div>
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <input type="text" class="form-control" name="title" required #n="ngModel" [(ngModel)]="art.descr">
+      </div>
+      <div class="alert alert-danger" *ngIf="n.invalid && n.touched">
+        <div *ngIf="n.errors">required field</div>
+      </div>
+      <div class="form-group">
+        <label>Contenu</label>
+        <input type="text" class="form-control" name="content" required #ff="ngModel" [(ngModel)]="art.content">
+      </div>
+      <div class="alert alert-danger" *ngIf="ff.invalid && ff.touched">
+        <div *ngIf="ff.errors">required field</div>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+        </div>
+        <div class="custom-file">
+          <input type="file" accept="image/*" class="custom-file-input" id="inputGroupFile01"
+            aria-describedby="inputGroupFileAddon01" name="image" #ff="ngModel" [(ngModel)]="art.img">
+          <label class="custom-file-label" for="inputGroupFile01">Choose picture</label>
+        </div>
+      </div>
+      <br>
+      <button class="btn btn-success" (click)="submit()">Ajouter</button>
+    </form>
+  </div>
+</div>
+<br>
