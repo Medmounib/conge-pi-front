@@ -22,6 +22,10 @@ export class ReservationService {
     return this.http.post(this.url+"/reserveEvent", data)
   }
 
+  reserveEspace(data: {}){
+    return this.http.post(this.url+"/reserveEspace", data)
+  }
+
   getUserReservations(){
     return this.http.get<Reservation[]>(this.url+"/user/reservations")
   }
