@@ -10,11 +10,11 @@
         <div class="header__menu__option">
           <nav class="header__menu">
             <ul>
-              <li><a routerLink="/blog">Blog</a></li>
               <li routerLinkActive="active"><a routerLink="/">Home</a></li>
               <li routerLinkActive="active"><a routerLink="/evenements">Evenements</a></li>
               <li routerLinkActive="active"><a routerLink="/store">Store</a></li>
               <li routerLinkActive="active"><a routerLink="/espaces">Espaces</a></li>
+              <li routerLinkActive="active"><a routerLink="/blog">Blog</a></li>
               <li *ngIf="!isUserLogged">
                 <a routerLinkActive="active" routerLink="/auth/login">Login</a>
               </li>
