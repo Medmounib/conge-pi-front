@@ -1,7 +1,7 @@
 <div class="">
   <div class="page-title">
     <div class="title_left">
-      <h3>Création Catégorie</h3>
+      <h3>Mise à jour Categorie</h3>
     </div>
   </div>
   <div class="clearfix"></div>
@@ -12,29 +12,29 @@
           <h2></h2>
         </div>
         <div class="x_content">
-          <form #f="ngForm">
+          <form [formGroup]="editEspaceCategorie" (ngSubmit)="collection()">
             <span class="section">Personal Info</span>
             <div class="field item form-group">
               <label class="col-form-label col-md-3 col-sm-3  label-align">title<span class="required">*</span></label>
               <div class="col-md-6 col-sm-6">
-                <input class="form-control" data-validate-length-range="6" [(ngModel)]="categorieEspace.title" data-validate-words="2" name="title" placeholder="title" required="required">
+                <input class="form-control" data-validate-length-range="6" formControlName="title" data-validate-words="2" name="title" placeholder="title" required="required">
               </div>
             </div>
             <div class="field item form-group">
-              <label class="col-form-label col-md-3 col-sm-3  label-align">title<span class="required">*</span></label>
+              <label class="col-form-label col-md-3 col-sm-3  label-align">Type<span class="required">*</span></label>
               <div class="col-md-6 col-sm-6">
-                <input class="form-control" data-validate-length-range="6" [(ngModel)]="categorieEspace.type" data-validate-words="2" name="type" placeholder="title" required="required">
-              </div>
+                <input class="form-control" required="required" formControlName="type" name="type"/></div>
             </div>
             <div class="field item form-group">
               <label class="col-form-label col-md-3 col-sm-3  label-align">description<span class="required">*</span></label>
               <div class="col-md-6 col-sm-6">
-                <textarea class="form-control" required="required" [(ngModel)]="categorieEspace.description" name="description"></textarea></div>
+                <textarea class="form-control" required="required" formControlName="description" name="description"></textarea></div>
             </div>
+
             <div class="ln_solid">
               <div class="form-group">
                 <div class="col-md-6 offset-md-3">
-                  <button type="submit" class="btn btn-success" (click)="save()">ajouter</button>
+                  <button type="submit" class="btn btn-success">Modifier</button>
                   <button type="reset" class="btn btn-dark">annuler</button>
                 </div>
               </div>
