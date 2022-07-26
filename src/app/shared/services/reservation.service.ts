@@ -27,7 +27,7 @@ export class ReservationService {
   }
 
   getUserReservations(){
-    return this.http.get<Reservation[]>(this.url+"/user/reservations")
+    return this.http.get<Reservation[]>(this.url+"/user/reservations");
   }
 
   getReservationById(id: number){
